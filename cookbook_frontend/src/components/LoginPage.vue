@@ -15,6 +15,7 @@
       <div class="text-subtitle-1 text-medium-emphasis">Account</div>
 
       <v-text-field
+        v-model="loginModel.username"
         density="compact"
         placeholder="Email address"
         prepend-inner-icon="mdi-email-outline"
@@ -25,18 +26,10 @@
         class="text-subtitle-1 text-medium-emphasis d-flex align-center justify-space-between"
       >
         Password
-
-        <a
-          class="text-caption text-decoration-none text-blue"
-          href="#"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Forgot login password?</a
-        >
       </div>
 
       <v-text-field
+        v-model="loginModel.password"
         :append-inner-icon="visible ? 'mdi-eye-off' : 'mdi-eye'"
         :type="visible ? 'text' : 'password'"
         density="compact"
@@ -46,7 +39,14 @@
         @click:append-inner="visible = !visible"
       ></v-text-field>
 
-      <v-btn block class="mb-8" color="blue" size="large" variant="tonal">
+      <v-btn
+        block
+        class="mb-8"
+        color="blue"
+        size="large"
+        variant="tonal"
+        @click="login"
+      >
         Log In
       </v-btn>
 
@@ -65,7 +65,19 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, reactive } from "vue";
+import { useStore } from "vuex";
+const store = useStore();
 
 const visible = ref(false);
+
+const loginModel = reactive({
+  username: null,
+  password: null,
+});
+
+const login = () => {
+  console.log("Test", loginModel);
+  store.dispatch("signin", loginModel);
+};
 </script>

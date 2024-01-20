@@ -20,11 +20,12 @@ const store = createStore({
       const authDO = {
         username: payload.username,
         password: payload.password,
-        returnSecureToken: true,
       };
 
       return axios
-        .post(clientUrl, authDO)
+        .post(clientUrl + "/login", authDO, {
+          headers: { "content-type": "application/x-www-form-urlencoded" },
+        })
         .then((response) => {
           const expiresIn = Number(response.data.expiresIn) * 3000;
           const expDate = new Date().getTime() + expiresIn;
@@ -32,7 +33,10 @@ const store = createStore({
           //Daten im LocalStorage speichern
           localStorage.setItem("token", response.data.access_token);
           localStorage.setItem("userId", response.data.userId);
+          localStorage.setItem("username", payload.username);
           localStorage.setItem("expiresIn", expDate);
+
+          console.log("response:", response);
 
           timer = setTimeout(() => {
             context.dispatch("autoSignout");
