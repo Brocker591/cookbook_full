@@ -7,22 +7,26 @@ let timer;
 const store = createStore({
   state: {
     userId: null,
+    userName: null,
     token: null,
   },
   mutations: {
     setUser(state, payload) {
       state.userId = payload.userId;
+      state.userName = payload.userName;
       state.token = payload.token;
     },
   },
   actions: {
-    signin(context, payload) {
+    async signin(context, payload) {
       const authDO = {
-        username: payload.username,
+        username: payload.email,
         password: payload.password,
       };
 
-      return axios
+      console.log(authDO);
+
+      await axios
         .post(clientUrl + "/login", authDO, {
           headers: { "content-type": "application/x-www-form-urlencoded" },
         })
@@ -44,7 +48,8 @@ const store = createStore({
 
           context.commit("setUser", {
             userId: response.data.localId,
-            token: response.data.idToken,
+            userName: authDO.username,
+            token: response.data.access_token,
           });
         })
         .catch((error) => {

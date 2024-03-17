@@ -26,12 +26,22 @@
         </v-window>
       </v-card>
     </v-main>
+    <dev>
+      <Notification
+        :notification="notification"
+        :toggleNotification="toggleNotification"
+      />
+    </dev>
   </v-app>
 </template>
 
 <script setup>
 import { ref, reactive } from "vue";
 import { useRouter } from "vue-router";
+import Notification from "@/components/Notification.vue";
+import useNotification from "@/hooks/useNotification.js";
+
+const { notification, toggleNotification } = useNotification();
 
 const router = useRouter();
 const tab = ref(null);

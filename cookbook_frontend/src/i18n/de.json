@@ -1,0 +1,26 @@
+{
+  "button": {
+    "login": "Anmelden",
+    "clear": "Abbrechen",
+    "logout": "Abemelden"
+  },
+  "header": {
+    "login": "Loggen Sie sich ein:"
+  },
+  "message": {
+    "confirm": {},
+    "error": {},
+    "info": {
+      "forgotPassword": "Login-Password vergessen?"
+    },
+    "placeholder": {
+      "email": "Geben Sie Ihre E-Mail Adresse ein...",
+      "password": "Geben Sie Ihr Password ein..."
+    }
+  },
+  "model": {
+    "account": "E-Mail",
+    "password": "Password"
+  },
+  "navigation": {}
+}
