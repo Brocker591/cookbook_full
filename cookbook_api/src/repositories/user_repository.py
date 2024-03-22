@@ -1,7 +1,7 @@
 from src import schemas
 from src.repositories import datamodels, session
 from sqlalchemy.orm import Session
-from fastapi import Depends, HTTPException
+from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
 from src.auth import get_password_hash, verify_password, create_access_token, ACCESS_TOKEN_EXPIRE_IN_MINUTES
 
@@ -38,3 +38,16 @@ async def login_user(form_data: OAuth2PasswordRequestForm, db: Session = Depends
     token = create_access_token(user=existing_user)
 
     return {"access_token": token, "userId": existing_user.id, "expiresIn": ACCESS_TOKEN_EXPIRE_IN_MINUTES, "token_type": "bearer"}
+
+
+async def change_user_password(user: schemas.UserBaseDto, db: Session = Depends(session.get_session)) -> None:
+    existing_user = db.query(datamodels.User).filter(
+    datamodels.User.username == user.username).first()
+
+    if not existing_user:
+        raise HTTPException(status.HTTP_404_NOT_FOUND, detail="User not found")
+    
+    existing_user.password = get_password_hash(user.password)
+    db.add(existing_user)
+    db.commit()
+
