@@ -1,14 +1,15 @@
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, Field
 from typing import Optional, List
 
 
 class IngredientBaseDto(BaseModel):
     name: str
     quantity: str
+    recipe_id: int
 
 
 class IngredientDto(IngredientBaseDto):
-    recipe_id: int
+    id: int = Field(default=0)
 
 
 class RecipeBaseDto(BaseModel):
@@ -29,6 +30,7 @@ class UserBaseDto(BaseModel):
     username: str
     email: EmailStr
     password: str
+
 
 class UserDto(UserBaseDto):
     id: int
