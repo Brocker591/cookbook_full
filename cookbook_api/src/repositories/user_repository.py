@@ -42,11 +42,11 @@ async def login_user(form_data: OAuth2PasswordRequestForm, db: Session = Depends
 
 async def change_user_password(user: schemas.UserBaseDto, db: Session = Depends(session.get_session)) -> None:
     existing_user = db.query(datamodels.User).filter(
-    datamodels.User.username == user.username).first()
+        datamodels.User.username == user.username).first()
 
     if not existing_user:
         raise HTTPException(status.HTTP_404_NOT_FOUND, detail="User not found")
-    
+
     existing_user.password = get_password_hash(user.password)
     db.add(existing_user)
     db.commit()

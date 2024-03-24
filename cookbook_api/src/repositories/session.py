@@ -12,6 +12,7 @@ Base = declarative_base()
 # Erstellen der Dependency  Methode gibt eine Datenbank Session zurück
 
 
+
 def get_session():
     session = SessionLocal()
     try:

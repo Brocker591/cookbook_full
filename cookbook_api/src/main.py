@@ -1,10 +1,11 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from src.routers.recipe_router import router as recipe_router
+from src.routers.inventory_router import router as inventory_router
 from src.routers.user_router import router as user_router
 from src.repositories import session
 import src.config as config
-
+import src.repositories.user_repository as user_repository
 
 
 session.Base.metadata.create_all(bind=session.engine)
@@ -26,3 +27,4 @@ app.add_middleware(
 
 app.include_router(recipe_router)
 app.include_router(user_router)
+app.include_router(inventory_router)

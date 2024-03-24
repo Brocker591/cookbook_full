@@ -1,5 +1,6 @@
 from pydantic import BaseModel, EmailStr, Field
 from typing import Optional, List
+from pydantic import BaseModel
 
 
 class IngredientBaseDto(BaseModel):
@@ -34,3 +35,16 @@ class UserBaseDto(BaseModel):
 
 class UserDto(UserBaseDto):
     id: int
+
+
+class ItemBaseDto(BaseModel):
+    name: str
+    quantity: Optional[str] = None
+
+
+class ItemDto(ItemBaseDto):
+    id: int = Field(default=0)
+
+
+class InventoryBaseDto(BaseModel):
+    items: List[ItemDto]
