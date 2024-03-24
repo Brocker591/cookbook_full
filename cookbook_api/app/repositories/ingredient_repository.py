@@ -1,10 +1,8 @@
-from src.repositories import datamodels, session
 from sqlalchemy.orm import Session
-from fastapi import Depends, HTTPException, status
-from src.schemas import IngredientBaseDto, IngredientDto
-from src.repositories.datamodels import Ingredient
+from fastapi import HTTPException, status
 from typing import List
-
+from app.schemas import IngredientBaseDto, IngredientDto
+from app.repositories import datamodels
 
 async def create_ingredient(ingredient_base: IngredientBaseDto, db: Session) -> IngredientDto:
     exist_recipe = db.query(datamodels.Recipe).filter(

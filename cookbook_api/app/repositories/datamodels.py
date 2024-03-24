@@ -1,20 +1,12 @@
-from sqlalchemy import Column, Integer, String, Boolean
+from sqlalchemy import Column, Integer, String, Boolean, ForeignKey, event
 from sqlalchemy.sql.expression import text
-from typing import List
-from src.repositories import session
-
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
 from sqlalchemy.orm import DeclarativeBase
 from sqlalchemy.orm import relationship
-from src.repositories import session
-from sqlalchemy.orm import Mapped
-from sqlalchemy import event
 from passlib.context import CryptContext
-from fastapi.security import OAuth2PasswordBearer
-
+from typing import List
+from app.repositories import session
 
 class User(session.Base):
     __tablename__ = "users"
@@ -48,9 +40,8 @@ class Item(session.Base):
     id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     name = Column(String, nullable=False, unique=True)
     quantity = Column(String, nullable=True)
+    priority = Column(Integer, nullable=False, default=0)
     inventory = Column(Boolean, nullable=False, default=False)
-
-
 
 
 @event.listens_for(User.__table__, 'after_create')
@@ -59,7 +50,7 @@ def insert_initial_user(*args, **kwargs):
     db_session = session.SessionLocal()
     pwd_context = CryptContext(schemes=["bcrypt"])
     user = User(username='admin', email='admin@example.com',
-                password=pwd_context.hash("admin"))
+                password=pwd_context.hash("e8v55pgEaZ7Jpm3"))
     db_session.add(user)
     db_session.commit()
     db_session.close()

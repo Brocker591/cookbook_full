@@ -1,9 +1,9 @@
-from src import schemas
-from src.repositories import datamodels, session
 from sqlalchemy.orm import Session
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
-from src.auth import get_password_hash, verify_password, create_access_token, ACCESS_TOKEN_EXPIRE_IN_MINUTES
+from app import schemas
+from app.repositories import datamodels, session
+from app.auth import get_password_hash, verify_password, create_access_token, ACCESS_TOKEN_EXPIRE_IN_MINUTES
 
 
 async def create_user(user_create_dto: schemas.UserBaseDto, db: Session = Depends(session.get_session)):
@@ -50,4 +50,3 @@ async def change_user_password(user: schemas.UserBaseDto, db: Session = Depends(
     existing_user.password = get_password_hash(user.password)
     db.add(existing_user)
     db.commit()
-

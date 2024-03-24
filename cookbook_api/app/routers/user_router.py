@@ -1,10 +1,10 @@
 from fastapi import status, HTTPException, Depends, APIRouter, Security
 from fastapi.security import OAuth2PasswordRequestForm
 from fastapi.security.api_key import APIKeyHeader
-from src.repositories import user_repository, session
 from sqlalchemy.orm import Session
-from src import schemas
-import src.config as config
+from app import schemas
+from app import config
+from app.repositories import user_repository, session
 
 api_key_header = APIKeyHeader(name="x-api-key", auto_error=False)
 

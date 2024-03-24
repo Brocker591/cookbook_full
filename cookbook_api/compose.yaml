@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  cockbook_api:
+    build: .
+    ports:
+      - "4444:80"
+    environment:
+      CORS_ORIGIN_URL: "http://localhost:3000"
+      API_KEY: "meintollerapikey"
+    volumes:
+      - cockbook_data:/data
+
+volumes:
+  cockbook_data:

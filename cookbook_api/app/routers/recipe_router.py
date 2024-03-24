@@ -1,12 +1,11 @@
 from fastapi import FastAPI, Response, status, HTTPException, Depends, APIRouter
-from src.repositories import recipe_repository as repository
-from src.repositories import session
 from sqlalchemy.orm import Session
 from typing import Optional, List
-from src import schemas
-from src.auth import get_current_user
-from src.repositories import datamodels
-
+from app import schemas
+from app.auth import get_current_user
+from app.repositories import datamodels
+from app.repositories import recipe_repository as repository
+from app.repositories import session
 
 router = APIRouter(tags=["Recipes"])
 

@@ -1,6 +1,6 @@
 from fastapi import status, HTTPException
-from src import schemas
 from typing import Optional, List
+from app import schemas
 
 list_of_recipes = []
 

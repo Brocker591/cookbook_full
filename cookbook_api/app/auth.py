@@ -1,12 +1,12 @@
 from passlib.context import CryptContext
 from fastapi.security import OAuth2PasswordBearer
-from src.repositories import datamodels, session
 import datetime
 from jose import jwt, JWTError
 from fastapi import Depends, HTTPException
 from sqlalchemy.orm import Session
+from app.repositories import datamodels, session
 
-SECRET_KEY = "123456"
+SECRET_KEY = "Hsk4oQdBoFBbNAgv6kdv4xnB37KEEJX2kxmPekETizRquytmVNWmoc8q42xrf8TZuzvvvhqMgLtq8AkASvWuN97xmZhQjNqNf9Zh6CsKJbj5AJvdcUQ3SgrzwCzm"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_IN_MINUTES = 30
 
