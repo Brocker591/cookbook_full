@@ -9,7 +9,7 @@ services:
       CORS_ORIGIN_URL: "http://localhost:3000"
       API_KEY: "meintollerapikey"
     volumes:
-      - cockbook_data:/data
+      - cockbook_data:/app/data
 
 volumes:
   cockbook_data:

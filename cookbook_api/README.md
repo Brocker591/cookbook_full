@@ -43,3 +43,12 @@ http://127.0.0.1:8000/docs
 Über die pyproject.toml können eigene Packages erstellt werden hierzu wird dieser Befehl benötigt
 
 pip install -e .
+
+## Docker
+
+$version="1.1"
+
+docker build -t "brocker591/cookbook_api:$version" .
+
+
+docker push "brocker591/cookbook_api:$version"
