@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:Cookbook.App.Models"
+             xmlns:viewmodel="clr-namespace:Cookbook.App.ViewModels"
+             x:DataType="viewmodel:MainPageViewModel"
+             x:Class="Cookbook.App.MainPage"
+             Title="Home">
+
+    <ScrollView>
+        <Grid RowDefinitions="*,auto,auto,auto" ColumnDefinitions="auto,*" HorizontalOptions="Center" Margin="10" Padding="20">
+            <Image
+                Grid.Row="0"
+                Grid.ColumnSpan="2"
+                Source="dragon.png"
+                HeightRequest="250"
+                HorizontalOptions="Center" />
+            <Label 
+                Grid.Row="1"
+                Grid.ColumnSpan="2"
+                Margin="5"
+                Text="Herzlich Willkommen zum CookBook"
+                FontSize="Body"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Label
+                Grid.Row="2"
+                Grid.Column="0"
+                Margin="5"
+                Text="Username:"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Editor 
+                Grid.Row="2"
+                Grid.Column="1" 
+                WidthRequest="300"
+                VerticalOptions="Center" 
+                HorizontalOptions="StartAndExpand"  Text="{Binding User.UserName}" Margin="5"/>
+            <Label
+                Grid.Row="3"
+                Grid.Column="0"
+                Margin="5"
+                Text="Password:"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Entry 
+                Grid.Row="3"
+                Grid.Column="2" 
+                VerticalOptions="Center"
+                WidthRequest="300"
+                HorizontalOptions="StartAndExpand"  Text="{Binding User.Password}" Margin="5" IsPassword="True" />
+
+        </Grid>
+    </ScrollView>
+
+</ContentPage>
