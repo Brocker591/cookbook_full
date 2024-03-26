@@ -1,1 +1,0 @@
-C:\SW\dotnet\Spielwiese\Cookbook.App\Cookbook.App\Cookbook.App.csproj;x64
