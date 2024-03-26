@@ -8,7 +8,8 @@
              Title="Home">
 
     <ScrollView>
-        <Grid RowDefinitions="*,auto,auto,auto" ColumnDefinitions="auto,*" HorizontalOptions="Center" Margin="10" Padding="20">
+        <Grid>
+            <Grid RowDefinitions="*,auto,auto,auto,auto" ColumnDefinitions="auto,*" HorizontalOptions="Center" Margin="10" Padding="20" IsVisible="{Binding IsLoggedOut}">
             <Image
                 Grid.Row="0"
                 Grid.ColumnSpan="2"
@@ -20,7 +21,8 @@
                 Grid.ColumnSpan="2"
                 Margin="5"
                 Text="Herzlich Willkommen zum CookBook"
-                FontSize="Body"
+                FontSize="18"
+                FontAttributes="Bold"
                 VerticalOptions="Center" 
                 HorizontalOptions="Center" />
             <Label
@@ -33,9 +35,9 @@
             <Editor 
                 Grid.Row="2"
                 Grid.Column="1" 
-                WidthRequest="300"
+                WidthRequest="250"
                 VerticalOptions="Center" 
-                HorizontalOptions="StartAndExpand"  Text="{Binding User.UserName}" Margin="5"/>
+                HorizontalOptions="StartAndExpand"  Text="{Binding User.UserName, Mode=TwoWay}" Margin="5"/>
             <Label
                 Grid.Row="3"
                 Grid.Column="0"
@@ -47,9 +49,46 @@
                 Grid.Row="3"
                 Grid.Column="2" 
                 VerticalOptions="Center"
-                WidthRequest="300"
-                HorizontalOptions="StartAndExpand"  Text="{Binding User.Password}" Margin="5" IsPassword="True" />
-
+                WidthRequest="250"
+                HorizontalOptions="StartAndExpand"  Text="{Binding User.Password, Mode=TwoWay}" Margin="5" IsPassword="True" />
+                <Button
+                IsVisible="{Binding IsLoggedOut}"
+                Grid.Row="4"
+                Grid.ColumnSpan="2"
+                Margin="5"
+                Text="Login"
+                Command="{Binding LoginUserCommand}"/>
+            </Grid>
+            <Grid RowDefinitions="*,auto,auto,auto"  HorizontalOptions="Center" Margin="10" Padding="20" IsVisible="{Binding IsLoggedIn}">
+                <Image
+                Grid.Row="0"
+                Source="dragon.png"
+                HeightRequest="250"
+                HorizontalOptions="Center" />
+                <Label 
+                Grid.Row="1"
+                Margin="5"
+                Text="Herzlich Willkommen zum CookBook"
+                FontSize="18"
+                    FontAttributes="Bold"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+                <Label 
+                Grid.Row="2"
+                Grid.Column="1" 
+                FontSize="18"
+                FontAttributes="Bold"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"  
+                Text="{Binding User.UserName, Mode=TwoWay}" Margin="5,20,5,20"/>
+                <Button
+                IsVisible="{Binding IsLoggedIn}"
+                Grid.Row="3"
+                Grid.ColumnSpan="2"
+                Margin="5"
+                Text="Logout"
+                Command="{Binding LogoutUserCommand}"/>
+            </Grid>
         </Grid>
     </ScrollView>
 

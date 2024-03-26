@@ -1,4 +1,5 @@
-﻿using Cookbook.App.ViewModels;
+﻿using Cookbook.App.Services;
+using Cookbook.App.ViewModels;
 using Microsoft.Extensions.Logging;
 
 namespace Cookbook.App
@@ -15,7 +16,8 @@ namespace Cookbook.App
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
-            
+            //Services
+            builder.Services.AddSingleton<ICookBookService, CookBookService>();
             
             //ViewModels
             builder.Services.AddSingleton<MainPageViewModel>();
