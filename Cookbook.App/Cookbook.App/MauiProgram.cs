@@ -1,5 +1,6 @@
 ﻿using Cookbook.App.Services;
 using Cookbook.App.ViewModels;
+using Cookbook.App.Views;
 using Microsoft.Extensions.Logging;
 
 namespace Cookbook.App
@@ -21,9 +22,11 @@ namespace Cookbook.App
             
             //ViewModels
             builder.Services.AddSingleton<MainPageViewModel>();
+            builder.Services.AddSingleton<ShoppingListViewModel>();
 
             //Views
             builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddSingleton<ShoppingListPage>();
 
 
 #if DEBUG

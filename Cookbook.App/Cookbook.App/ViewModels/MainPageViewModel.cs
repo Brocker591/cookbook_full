@@ -9,8 +9,8 @@ namespace Cookbook.App.ViewModels
     {
         private readonly ICookBookService cookBookService;
 
-        private UserModel user;
-        public UserModel User
+        private User user;
+        public User User
         {
             get => user;
             set
@@ -68,26 +68,49 @@ namespace Cookbook.App.ViewModels
 
         public async Task LoadUser()
         {
-            User = new UserModel();
+            User = new User();
             User.UserName = "admin";
             User.Password = "e8v55pgEaZ7Jpm3";
 
+            if(this.User == null)
+                User = new User();
 
+            if (User.UserName != "" && User.Password != "")
+                await LoginUserAsync();
         }
 
         public async Task LoginUserAsync()
         {
-            User = await cookBookService.GetUserAsync(User);
+            if (IsBusy)
+                return;
 
-            if (String.IsNullOrEmpty(User.Token))
+            try
             {
-                IsLoggedIn = false;
-                IsLoggedOut = true;
+                User = await cookBookService.GetUserAsync(User);
+
+                if (string.IsNullOrEmpty(User.Token))
+                {
+                    Settings.Token = "";
+                    IsLoggedIn = false;
+                    IsLoggedOut = true;
+                }
+                else
+                {
+                    Settings.Token = User.Token;
+                    IsLoggedIn = true;
+                    IsLoggedOut = false;
+                }
+                IsBusy = false;
+
             }
-            else
+            catch (Exception ex)
             {
-                IsLoggedIn = true;
-                IsLoggedOut = false;
+                await Shell.Current.DisplayAlert("Error!", ex.Message, "OK");
+                IsBusy = false;
+            }
+            finally
+            {
+                IsBusy = false;
             }
         }
 

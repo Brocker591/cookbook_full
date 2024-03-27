@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cookbook.App.Views.ShoppingListPage"
+             xmlns:model="clr-namespace:Cookbook.App.Models"
+             xmlns:viewmodel="clr-namespace:Cookbook.App.ViewModels"
+             x:DataType="viewmodel:ShoppingListViewModel"
+             Shell.BackgroundColor="#3D5AFE"
+             Title="Shopping List">
+
+    <ScrollView>
+        <Grid   
+            VerticalOptions="StartAndExpand"
+            Margin="10" 
+            Padding="10"
+            RowDefinitions="*,Auto,*">
+            <CollectionView
+                Grid.Row="0"
+                Margin="5"
+                ItemsSource="{Binding ShoppingList}">
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Item">
+                        <Grid Margin="0,5,0,0">
+                            <Frame Style="{StaticResource CardView}">
+                                <!--<Frame.GestureRecognizers>
+                                                        <TapGestureRecognizer 
+                                                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ListFailureViewModel}}, Path=GoToFailureAsyncCommand}"
+                                                            CommandParameter="{Binding .}"/>
+                                                    </Frame.GestureRecognizers>-->
+                                <Grid ColumnDefinitions="Auto,Auto, *">
+                                    <Label Grid.Column="0" WidthRequest="200" Margin="5" Text="{Binding Name}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                                    <BoxView Grid.Column="1"  BackgroundColor="#3D5AFE" WidthRequest="3" />
+                                    <Label Grid.Column="2" Margin="5" Text="{Binding Quantity}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Entry Grid.Row="1" Margin="5" Placeholder="Suche..." x:Name="MyFilterString" PropertyChanged="Entry_PropertyChanged"/>
+            <CollectionView
+                Grid.Row="3"
+                Margin="5"
+                ItemsSource="{Binding UnusedItems}">
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Item">
+                        <Grid Margin="0,5,0,0">
+                            <Frame Style="{StaticResource CardView}">
+                                <!--<Frame.GestureRecognizers>
+                                                        <TapGestureRecognizer 
+                                                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ListFailureViewModel}}, Path=GoToFailureAsyncCommand}"
+                                                            CommandParameter="{Binding .}"/>
+                                                    </Frame.GestureRecognizers>-->
+                                <Grid ColumnDefinitions="Auto,Auto, *">
+                                    <Label Grid.Column="0" WidthRequest="200" Margin="5" Text="{Binding Name}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                                    <BoxView Grid.Column="1"  BackgroundColor="#3D5AFE" WidthRequest="3" />
+                                    <Label Grid.Column="2" Margin="5" Text="{Binding Quantity}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+
+
+
+            <ActivityIndicator IsVisible="{Binding IsBusy}"
+                           IsRunning="{Binding IsBusy}"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           Grid.RowSpan="3"/>
+        </Grid>
+
+
+    </ScrollView>
+</ContentPage>

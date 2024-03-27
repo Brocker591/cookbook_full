@@ -4,6 +4,7 @@ namespace Cookbook.App.Services
 {
     public interface ICookBookService
     {
-        Task<UserModel> GetUserAsync(UserModel userModel);
+        Task<User> GetUserAsync(User userModel);
+        Task<List<Item>> GetInventroy();
     }
 }

@@ -5,6 +5,7 @@
              xmlns:viewmodel="clr-namespace:Cookbook.App.ViewModels"
              x:DataType="viewmodel:MainPageViewModel"
              x:Class="Cookbook.App.MainPage"
+             Shell.BackgroundColor="#3D5AFE"
              Title="Home">
 
     <ScrollView>
@@ -89,6 +90,14 @@
                 Text="Logout"
                 Command="{Binding LogoutUserCommand}"/>
             </Grid>
+
+
+            <ActivityIndicator 
+                IsVisible="{Binding IsBusy}"
+                IsRunning="{Binding IsBusy}"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="CenterAndExpand"/>
+
         </Grid>
     </ScrollView>
 
