@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  cockbook.api:
+    build: .
+    ports:
+      - "8000:80"
+    environment:
+      CORS_ORIGIN_URL: "http://localhost:3000"
+      API_KEY: "meintollerapikey"
+      ADMIM_PASSWORD: "admin"
+    volumes:
+      - cockbook_data:/app/data
+
+volumes:
+  cockbook_data:

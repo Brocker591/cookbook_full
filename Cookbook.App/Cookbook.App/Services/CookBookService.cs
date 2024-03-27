@@ -62,5 +62,32 @@ namespace Cookbook.App.Services
             }
             return new List<Item>();
         }
+
+        public async Task UpdateItemAsync(Item item, bool isInventory = false)
+        {
+            if (string.IsNullOrEmpty(Settings.Token))
+                return;
+            var itemUpdateDto = new ItemUpdateDto
+            {
+                id = item.Id,
+                name = item.Name,
+                quantity = item.Quantity,
+                priority = item.Priority,
+                inventory = isInventory
+            };
+
+            using var request = new HttpRequestMessage(HttpMethod.Put, "/inventory/updateItem");
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", Settings.Token);
+
+            request.Content = new StringContent(JsonConvert.SerializeObject(itemUpdateDto), Encoding.UTF8, "application/json");
+
+
+            using var response = await Client.SendAsync(request);
+            if (response.IsSuccessStatusCode)
+                return;
+            else
+                throw new HttpRequestException("Error updating item");
+
+        }
     }
 }

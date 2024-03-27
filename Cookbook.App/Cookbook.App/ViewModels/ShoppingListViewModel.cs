@@ -11,6 +11,7 @@ namespace Cookbook.App.ViewModels
         public ObservableCollection<Item> UnusedItems { get; set; } = new();
         public List<Item> UnusedItemList { get; set; } = new();
         public Command LoadData { get; set; }
+        public Command CrossOutCommand { get; set; }
 
         private string filterString = "";
         public string FilterString
@@ -30,6 +31,7 @@ namespace Cookbook.App.ViewModels
         {
             _cookBookService = cookBookService;
             LoadData = new Command(async () => await LoadDataAsync());
+            CrossOutCommand = new Command<Item>(async (item) => await CrossOutItemFromShoppingListAsync(item));
 
         }
 
@@ -73,11 +75,35 @@ namespace Cookbook.App.ViewModels
                 IsBusy = false;
             }
         }
+
+        public async Task CrossOutItemFromShoppingListAsync(Item item)
+        {
+            if (IsBusy)
+                return;
+            IsBusy = true;
+
+            try
+            {
+                await _cookBookService.UpdateItemAsync(item);
+
+                ShoppingList.Remove(item);
+            }
+            catch (Exception ex)
+            {
+                await Shell.Current.DisplayAlert("Error!", ex.Message, "OK");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }   
+
+
         public async Task FilterUnusedItems(string filterString)
         {
             if (filterString is not null)
             {
-                List<Item> UnusedItemsSorted = UnusedItemList.OrderBy(x => x.Name).Where(x => x.Name.Contains(filterString)).ToList();
+                List<Item> UnusedItemsSorted = UnusedItemList.OrderBy(x => x.Name).Where(x => x.Name.ToLower().Contains(filterString.ToLower())).ToList();
                 await FillUnusedItems(UnusedItemsSorted);
             }
 

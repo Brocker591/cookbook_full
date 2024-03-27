@@ -1,0 +1,26 @@
+{
+  "button": {
+    "login": "Login",
+    "clear": "Clear",
+    "logout": "Logout"
+  },
+  "header": {
+    "login": "Login to your account:"
+  },
+  "message": {
+    "confirm": {},
+    "error": {},
+    "info": {
+      "forgotPassword": "Forgot login password?"
+    },
+    "placeholder": {
+      "email": "Enter your email address...",
+      "password": "Enter your password..."
+    }
+  },
+  "model": {
+    "account": "E-Mail",
+    "password": "Password"
+  },
+  "navigation": {}
+}
