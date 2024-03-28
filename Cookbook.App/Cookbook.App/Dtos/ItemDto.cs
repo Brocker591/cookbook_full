@@ -12,5 +12,6 @@ namespace Cookbook.App.Dtos
         public string Name { get; set; }
         public string Quantity { get; set; }
         public int Priority { get; set; }
+        public bool Inventory { get; set; } 
     }
 }

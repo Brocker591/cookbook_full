@@ -63,6 +63,26 @@ namespace Cookbook.App.Services
             return new List<Item>();
         }
 
+        public async Task<List<Item>> GetAllItemsAsync()
+        {
+            if (string.IsNullOrEmpty(Settings.Token))
+                return new List<Item>();
+
+            using var request = new HttpRequestMessage(HttpMethod.Get, "/items");
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", Settings.Token);
+
+            using var response = await Client.SendAsync(request);
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                var itemsDto = JsonConvert.DeserializeObject<List<ItemDto>>(json);
+                List<Item> items = itemsDto.Select(x => x.ToModel()).ToList();
+
+                return items;
+            }
+            return new List<Item>();
+        }
+
         public async Task UpdateItemAsync(Item item, bool isInventory = false)
         {
             if (string.IsNullOrEmpty(Settings.Token))
@@ -87,6 +107,31 @@ namespace Cookbook.App.Services
                 return;
             else
                 throw new HttpRequestException("Error updating item");
+
+        }
+
+        public async Task CreateItemAsync(Item item)
+        {
+            if (string.IsNullOrEmpty(Settings.Token))
+                return;
+            var itemCreateDto = new ItemCreateDto
+            {
+                name = item.Name,
+                quantity = item.Quantity,
+            };
+
+
+            using var request = new HttpRequestMessage(HttpMethod.Post, "/inventory/createItem");
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", Settings.Token);
+
+            request.Content = new StringContent(JsonConvert.SerializeObject(itemCreateDto), Encoding.UTF8, "application/json");
+
+
+            using var response = await Client.SendAsync(request);
+            if (response.IsSuccessStatusCode)
+                return;
+            else
+                throw new HttpRequestException("Error creating item");
 
         }
     }

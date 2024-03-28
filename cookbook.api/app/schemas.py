@@ -45,9 +45,6 @@ class ItemBaseDto(BaseModel):
 class ItemDto(ItemBaseDto):
     id: int = Field(default=0)
     priority: Optional[int] = 0
-
-
-class InventoryItemDto(ItemDto):
     inventory: bool = Field(default=False)
 
 

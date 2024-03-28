@@ -24,15 +24,20 @@ async def add_item_to_inventory(item: schemas.ItemBaseDto, db: Session = Depends
     new_inventory = schemas.InventoryBaseDto(items=item_dto)
     return new_inventory
 
+@router.post("/inventory/createItem", status_code=status.HTTP_201_CREATED, response_model=schemas.ItemDto)
+async def create_item(item: schemas.ItemBaseDto, db: Session = Depends(session.get_session), current_user: datamodels.User = Depends(get_current_user)) -> schemas.ItemDto:
+    item_dto = await repository.create_item(item=item, db=db)
+    return item_dto
 
-@router.post("/inventory/deleteItem", status_code=status.HTTP_201_CREATED, response_model=schemas.InventoryBaseDto)
+
+@router.post("/inventory/removeItem", status_code=status.HTTP_201_CREATED, response_model=schemas.InventoryBaseDto)
 async def delete_item_from_inventory(item: schemas.ItemBaseDto, db: Session = Depends(session.get_session), current_user: datamodels.User = Depends(get_current_user)) -> schemas.InventoryBaseDto:
     item_dto = await repository.delete_item_from_inventory(item=item, db=db)
     new_inventory = schemas.InventoryBaseDto(items=[item_dto])
     return new_inventory
 
 @router.put("/inventory/updateItem", status_code=status.HTTP_204_NO_CONTENT)
-async def update_item_from_inventory(item: schemas.InventoryItemDto, db: Session = Depends(session.get_session), current_user: datamodels.User = Depends(get_current_user)) -> None:
+async def update_item_from_inventory(item: schemas.ItemDto, db: Session = Depends(session.get_session), current_user: datamodels.User = Depends(get_current_user)) -> None:
     await repository.update_item_from_inventory(item=item, db=db)
     return status.HTTP_204_NO_CONTENT
 

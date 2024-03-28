@@ -59,6 +59,19 @@ namespace Cookbook.App.Models
                 this.OnPropertyChanged();
             }
         }
+        private bool inventory = false;
+        public bool Inventory
+        {
+            get => inventory;
+            set
+            {
+                if (inventory == value)
+                    return;
+                inventory = value;
+                this.OnPropertyChanged();
+            }
+        }
+
 
     }
 }

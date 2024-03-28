@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cookbook.App.Views.AddOrCreateItemPage"
+             xmlns:model="clr-namespace:Cookbook.App.Models"
+             xmlns:viewmodel="clr-namespace:Cookbook.App.ViewModels"
+             x:DataType="viewmodel:AddOrCreateItemViewModel"
+             Shell.BackgroundColor="#3D5AFE"
+             Title="Artikel Bearbeiten">
+    <VerticalStackLayout
+        VerticalOptions="StartAndExpand"
+        Margin="10" 
+        Padding="10">
+        
+        <Entry Margin="5" Text="{Binding Item.Name, Mode=TwoWay}" />
+        <Entry Margin="5" Text="{Binding Item.Quantity, Mode=TwoWay}" />
+        <Button Margin="5" Text="Erstellen" Command="{Binding AddOrCreateItemCommand}" />
+
+
+    </VerticalStackLayout>
+</ContentPage>

@@ -8,7 +8,7 @@ namespace Cookbook.App.Dtos
 {
     public class ItemCreateDto
     {
-        public string Name { get; set; }
-        public string Quantity { get; set; }
+        public string name { get; set; }
+        public string quantity { get; set; }
     }
 }

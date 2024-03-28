@@ -16,7 +16,9 @@ namespace Cookbook.App.Models
                 Id = item.Id,
                 Name = item.Name,
                 Quantity = item.Quantity,
-                Priority = item.Priority
+                Priority = item.Priority,
+                Inventory = item.Inventory
+                
             };
         }
 
@@ -27,7 +29,8 @@ namespace Cookbook.App.Models
                 Id = itemDto.Id,
                 Name = itemDto.Name,
                 Quantity = itemDto.Quantity,
-                Priority = itemDto.Priority
+                Priority = itemDto.Priority,
+                Inventory = itemDto.Inventory
             };
         }
 
@@ -35,8 +38,8 @@ namespace Cookbook.App.Models
         {
             return new ItemCreateDto
             {
-                Name = item.Name,
-                Quantity = item.Quantity
+                name = item.Name,
+                quantity = item.Quantity
             };
         }
     }

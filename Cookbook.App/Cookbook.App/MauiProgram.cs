@@ -23,10 +23,12 @@ namespace Cookbook.App
             //ViewModels
             builder.Services.AddSingleton<MainPageViewModel>();
             builder.Services.AddSingleton<ShoppingListViewModel>();
+            builder.Services.AddSingleton<AddOrCreateItemViewModel>();
 
             //Views
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<ShoppingListPage>();
+            builder.Services.AddSingleton<AddOrCreateItemPage>();
 
 
 #if DEBUG

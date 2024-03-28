@@ -6,6 +6,8 @@ namespace Cookbook.App.Services
     {
         Task<User> GetUserAsync(User userModel);
         Task<List<Item>> GetInventroy();
+        Task<List<Item>> GetAllItemsAsync();
         Task UpdateItemAsync(Item item, bool isInventory = false);
+        Task CreateItemAsync(Item item);
     }
 }
