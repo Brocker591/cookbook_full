@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SQLite;
 
 namespace Cookbook.App.Models
 {
     public class User : BaseModel
     {
         private Guid id;
+        
+        [PrimaryKey]
         public Guid Id
         {
             get => id;

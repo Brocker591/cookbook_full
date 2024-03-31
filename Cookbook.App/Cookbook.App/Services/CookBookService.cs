@@ -43,25 +43,25 @@ namespace Cookbook.App.Services
             return userModel;
         }
 
-        public async Task<List<Item>> GetInventroy()
-        {
-            if(string.IsNullOrEmpty(Settings.Token))
-                return new List<Item>();
+        //public async Task<List<Item>> GetInventroy()
+        //{
+        //    if(string.IsNullOrEmpty(Settings.Token))
+        //        return new List<Item>();
 
-            using var request = new HttpRequestMessage(HttpMethod.Get, "/inventory");
-            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", Settings.Token);
+        //    using var request = new HttpRequestMessage(HttpMethod.Get, "/inventory");
+        //    request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", Settings.Token);
 
-            using var response = await Client.SendAsync(request);
-            if (response.IsSuccessStatusCode)
-            {
-                var json = await response.Content.ReadAsStringAsync();
-                var itemsDto = JsonConvert.DeserializeObject<ItemListDto>(json);
-                List<Item> items = itemsDto.Items.Select(x => x.ToModel()).ToList();
+        //    using var response = await Client.SendAsync(request);
+        //    if (response.IsSuccessStatusCode)
+        //    {
+        //        var json = await response.Content.ReadAsStringAsync();
+        //        var itemsDto = JsonConvert.DeserializeObject<ItemListDto>(json);
+        //        List<Item> items = itemsDto.Items.Select(x => x.ToModel()).ToList();
 
-                return items;
-            }
-            return new List<Item>();
-        }
+        //        return items;
+        //    }
+        //    return new List<Item>();
+        //}
 
         public async Task<List<Item>> GetAllItemsAsync()
         {
@@ -83,7 +83,7 @@ namespace Cookbook.App.Services
             return new List<Item>();
         }
 
-        public async Task UpdateItemAsync(Item item, bool isInventory = false)
+        public async Task UpdateItemAsync(Item item)
         {
             if (string.IsNullOrEmpty(Settings.Token))
                 return;
@@ -93,10 +93,10 @@ namespace Cookbook.App.Services
                 name = item.Name,
                 quantity = item.Quantity,
                 priority = item.Priority,
-                inventory = isInventory
+                inventory = item.Inventory
             };
 
-            using var request = new HttpRequestMessage(HttpMethod.Put, "/inventory/updateItem");
+            using var request = new HttpRequestMessage(HttpMethod.Put, "/items");
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", Settings.Token);
 
             request.Content = new StringContent(JsonConvert.SerializeObject(itemUpdateDto), Encoding.UTF8, "application/json");
@@ -107,13 +107,14 @@ namespace Cookbook.App.Services
                 return;
             else
                 throw new HttpRequestException("Error updating item");
-
         }
 
-        public async Task CreateItemAsync(Item item)
+        public async Task<Item> CreateItemAsync(Item item)
         {
             if (string.IsNullOrEmpty(Settings.Token))
-                return;
+                throw new HttpRequestException("No Token");
+               
+                
             var itemCreateDto = new ItemCreateDto
             {
                 name = item.Name,
@@ -121,7 +122,7 @@ namespace Cookbook.App.Services
             };
 
 
-            using var request = new HttpRequestMessage(HttpMethod.Post, "/inventory/createItem");
+            using var request = new HttpRequestMessage(HttpMethod.Post, "/items");
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", Settings.Token);
 
             request.Content = new StringContent(JsonConvert.SerializeObject(itemCreateDto), Encoding.UTF8, "application/json");
@@ -129,7 +130,11 @@ namespace Cookbook.App.Services
 
             using var response = await Client.SendAsync(request);
             if (response.IsSuccessStatusCode)
-                return;
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                var itemDto = JsonConvert.DeserializeObject<ItemDto>(json);
+                return itemDto.ToModel();
+            }
             else
                 throw new HttpRequestException("Error creating item");
 

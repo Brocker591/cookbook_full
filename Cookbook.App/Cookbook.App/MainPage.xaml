@@ -38,7 +38,7 @@
                 Grid.Column="1" 
                 WidthRequest="250"
                 VerticalOptions="Center" 
-                HorizontalOptions="StartAndExpand"  Text="{Binding User.UserName, Mode=TwoWay}" Margin="5"/>
+                HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"  Text="{Binding User.UserName, Mode=TwoWay}" Margin="5"/>
             <Label
                 Grid.Row="3"
                 Grid.Column="0"
@@ -51,7 +51,7 @@
                 Grid.Column="2" 
                 VerticalOptions="Center"
                 WidthRequest="250"
-                HorizontalOptions="StartAndExpand"  Text="{Binding User.Password, Mode=TwoWay}" Margin="5" IsPassword="True" />
+                HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"  Text="{Binding User.Password, Mode=TwoWay}" Margin="5" IsPassword="True" />
                 <Button
                 IsVisible="{Binding IsLoggedOut}"
                 Grid.Row="4"

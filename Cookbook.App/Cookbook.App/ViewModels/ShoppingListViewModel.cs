@@ -1,4 +1,5 @@
 ﻿using Cookbook.App.Models;
+using Cookbook.App.Repositories;
 using Cookbook.App.Services;
 using Cookbook.App.Views;
 using System.Collections.ObjectModel;
@@ -8,10 +9,12 @@ namespace Cookbook.App.ViewModels
     public class ShoppingListViewModel : BaseViewModel
     {
         private readonly ICookBookService _cookBookService;
+        private readonly IItemRepository _itemRepository;
         public ObservableCollection<Item> ShoppingList { get; } = new();
         public ObservableCollection<Item> UnusedItems { get; set; } = new();
         public List<Item> UnusedItemList { get; set; } = new();
-        public Command LoadData { get; set; }
+        public Command LoadDataFromDatabaseCommand { get; set; }
+        public Command LoadDataFromServerCommand { get; set; }
         public Command CrossOutCommand { get; set; }
         public Command GoToCreateItemCommand { get; set; }
         public Command GoToUpdateItemCommand { get; set; }
@@ -29,18 +32,40 @@ namespace Cookbook.App.ViewModels
                 OnPropertyChanged();
             }
         }
+        private bool firstStart = true;
+        public bool FirstStart
+        {
+            get => firstStart;
+            set
+            {
+                if (firstStart == value)
+                    return;
 
-        public ShoppingListViewModel(ICookBookService cookBookService)
+                firstStart = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public ShoppingListViewModel(ICookBookService cookBookService, IItemRepository itemRepository)
         {
             _cookBookService = cookBookService;
-            LoadData = new Command(async () => await LoadDataAsync());
+            _itemRepository = itemRepository;
+            LoadDataFromDatabaseCommand = new Command(async () => await LoadDataFromDatabaseAsync());
+            LoadDataFromServerCommand = new Command(async () => await LoadDataFromServerAsync());
             CrossOutCommand = new Command<Item>(async (item) => await CrossOutItemFromShoppingListAsync(item));
             GoToCreateItemCommand = new Command(async () => await GoToCreateItemAsync());
             GoToUpdateItemCommand = new Command<Item>(async (item) => await GoToUpdateItemAsync(item));
 
+            if (FirstStart)
+            {
+
+                LoadDataFromServerCommand.Execute(this);
+                FirstStart = false;
+            }
+
         }
 
-        private async Task LoadDataAsync()
+        private async Task LoadDataFromDatabaseAsync()
         {
             if (IsBusy)
                 return;
@@ -50,28 +75,44 @@ namespace Cookbook.App.ViewModels
             UnusedItemList.Clear();
             try
             {
-                var itemList = await _cookBookService.GetInventroy();
+                var itemList = await _itemRepository.GetAllAsync();
                 foreach (var item in itemList)
                 {
-                    ShoppingList.Add(item);
+                    if (item.Inventory)
+                        ShoppingList.Add(item);
+                    else
+                        UnusedItemList.Add(item);
+
                 }
                 IsBusy = false;
 
+                await FillUnusedItems(UnusedItemList);
 
-                //TEST DATEN
-                //UnusedItemList.Add(new Item { Id = 5, Name = "Test1", Quantity = "" });
-                //UnusedItemList.Add(new Item { Id = 6, Name = "Schinken", Quantity = "" });
-                //UnusedItemList.Add(new Item { Id = 7, Name = "Obst", Quantity = "" });
-                //UnusedItemList.Add(new Item { Id = 8, Name = "Salami", Quantity = "" });
-                //UnusedItemList.Add(new Item { Id = 9, Name = "Frosta", Quantity = "6 Packungen" });
-                //UnusedItemList.Add(new Item { Id = 10, Name = "Honig", Quantity = "1 Glas" });
-                //UnusedItemList.Add(new Item { Id = 11, Name = "Kartoffeln", Quantity = "" });
-                //UnusedItemList.Add(new Item { Id = 12, Name = "Nutella", Quantity = "" });
-                //UnusedItemList.Add(new Item { Id = 13, Name = "Lauch", Quantity = "3 Stück" });
-                //UnusedItemList.Add(new Item { Id = 14, Name = "Pizza", Quantity = "4 Stück" });
-                var allItems = await _cookBookService.GetAllItemsAsync();
-                UnusedItemList = allItems.Where(x => x.Inventory == false).ToList();
-                FillUnusedItems(UnusedItemList);
+            }
+            catch (Exception ex)
+            {
+                await Shell.Current.DisplayAlert("Error!", ex.Message, "OK");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+        private async Task LoadDataFromServerAsync()
+        {
+            if (IsBusy)
+                return;
+            IsBusy = true;
+
+            try
+            {
+                var itemList = await _cookBookService.GetAllItemsAsync();
+                await _itemRepository.UpdateItemsFromServerAsync(itemList);
+                IsBusy = false;
+                await LoadDataFromDatabaseAsync();
+
+
             }
             catch (Exception ex)
             {
@@ -91,9 +132,13 @@ namespace Cookbook.App.ViewModels
 
             try
             {
+                item.Inventory = false;
                 await _cookBookService.UpdateItemAsync(item);
+                await _itemRepository.UpdateAsync(item);
+                IsBusy = false;
+                await LoadDataFromDatabaseAsync();
+                //ShoppingList.Remove(item);
 
-                ShoppingList.Remove(item);
             }
             catch (Exception ex)
             {
@@ -103,27 +148,36 @@ namespace Cookbook.App.ViewModels
             {
                 IsBusy = false;
             }
-        }   
+        }
 
 
         public async Task FilterUnusedItems(string filterString)
         {
             if (filterString is not null)
             {
-                this.FilterString = filterString;
-                List<Item> UnusedItemsSorted = UnusedItemList.OrderBy(x => x.Name).Where(x => x.Name.ToLower().Contains(filterString.ToLower())).ToList();
-                await FillUnusedItems(UnusedItemsSorted);
+                if (filterString != "")
+                {
+                    this.FilterString = filterString;
+                    List<Item> UnusedItemsSorted = UnusedItemList.OrderBy(x => x.Name).Where(x => x.Name.ToLower().Contains(filterString.ToLower())).ToList();
+                    await FillUnusedItems(UnusedItemsSorted);
+                }
+                else
+                {
+                    await FillUnusedItems(UnusedItemList);
+                }
             }
 
-
         }
+
 
         private async Task FillUnusedItems(List<Item> itemList)
         {
 
             UnusedItems.Clear();
 
-            foreach (var item in itemList)
+            var sortetItemList = itemList.OrderByDescending(x => x.Priority).ToList();
+
+            foreach (var item in sortetItemList)
             {
                 UnusedItems.Add(item);
             }
@@ -131,7 +185,7 @@ namespace Cookbook.App.ViewModels
 
         private async Task GoToCreateItemAsync()
         {
-            if(IsBusy)
+            if (IsBusy)
                 return;
             IsBusy = true;
 

@@ -24,6 +24,7 @@ async def add_item_to_inventory(item: schemas.ItemBaseDto, db: Session = Depends
     new_inventory = schemas.InventoryBaseDto(items=item_dto)
     return new_inventory
 
+
 @router.post("/inventory/createItem", status_code=status.HTTP_201_CREATED, response_model=schemas.ItemDto)
 async def create_item(item: schemas.ItemBaseDto, db: Session = Depends(session.get_session), current_user: datamodels.User = Depends(get_current_user)) -> schemas.ItemDto:
     item_dto = await repository.create_item(item=item, db=db)
@@ -35,6 +36,7 @@ async def delete_item_from_inventory(item: schemas.ItemBaseDto, db: Session = De
     item_dto = await repository.delete_item_from_inventory(item=item, db=db)
     new_inventory = schemas.InventoryBaseDto(items=[item_dto])
     return new_inventory
+
 
 @router.put("/inventory/updateItem", status_code=status.HTTP_204_NO_CONTENT)
 async def update_item_from_inventory(item: schemas.ItemDto, db: Session = Depends(session.get_session), current_user: datamodels.User = Depends(get_current_user)) -> None:
@@ -49,14 +51,13 @@ async def get_inventory(db: Session = Depends(session.get_session), current_user
     return inventory
 
 
-@router.get("/items", status_code=status.HTTP_200_OK, response_model=List[schemas.ItemDto])
-async def get_all_items(db: Session = Depends(session.get_session), current_user: datamodels.User = Depends(get_current_user)) -> List[schemas.ItemDto]:
-    items = await repository.get_all_items(db=db)
-    return items
+# @router.get("/items", status_code=status.HTTP_200_OK, response_model=List[schemas.ItemDto])
+# async def get_all_items(db: Session = Depends(session.get_session), current_user: datamodels.User = Depends(get_current_user)) -> List[schemas.ItemDto]:
+#     items = await repository.get_all_items(db=db)
+#     return items
 
 
-@router.delete("/items/{item_id}", status_code=status.HTTP_204_NO_CONTENT)
-async def delete_item(item_id: int, db: Session = Depends(session.get_session), current_user: datamodels.User = Depends(get_current_user)) -> None:
-    await repository.delete_item(item_id=item_id, db=db)
-    return status.HTTP_204_NO_CONTENT
-
+# @router.delete("/items/{item_id}", status_code=status.HTTP_204_NO_CONTENT)
+# async def delete_item(item_id: int, db: Session = Depends(session.get_session), current_user: datamodels.User = Depends(get_current_user)) -> None:
+#     await repository.delete_item(item_id=item_id, db=db)
+#     return status.HTTP_204_NO_CONTENT

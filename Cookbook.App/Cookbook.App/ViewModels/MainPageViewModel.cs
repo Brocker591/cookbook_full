@@ -1,4 +1,5 @@
 ﻿using Cookbook.App.Models;
+using Cookbook.App.Repositories;
 using Cookbook.App.Services;
 using System.Windows.Input;
 
@@ -7,7 +8,8 @@ namespace Cookbook.App.ViewModels
 {
     public class MainPageViewModel : BaseViewModel
     {
-        private readonly ICookBookService cookBookService;
+        private readonly ICookBookService _cookBookService;
+        private readonly IUserRepository _userRepository;
 
         private User user;
         public User User
@@ -55,27 +57,33 @@ namespace Cookbook.App.ViewModels
         public ICommand LoadUserCommand { private set; get; }
         public ICommand LogoutUserCommand { private set; get; }
 
-        public MainPageViewModel(ICookBookService cookBookService)
+        public MainPageViewModel(ICookBookService cookBookService, IUserRepository userRepository)
         {
-            this.cookBookService = cookBookService;
+            _cookBookService = cookBookService;
+            _userRepository = userRepository;
             LoginUserCommand = new Command(async () => await LoginUserAsync());
             LoadUserCommand = new Command(async () => await LoadUser());
             LogoutUserCommand = new Command(async () => await LogoutUserAsync());
 
             IsLoggedIn = false;
             IsLoggedOut = true;
+
         }
 
         public async Task LoadUser()
         {
-            User = new User();
-            User.UserName = "admin";
-            User.Password = "e8v55pgEaZ7Jpm3";
+            var user = await _userRepository.GetAsync();
 
-            if(this.User == null)
+            if (user != null)
+                User = user;
+            else
                 User = new User();
 
-            if (User.UserName != "" && User.Password != "")
+            //User.UserName = "admin";
+            //User.Password = "e8v55pgEaZ7Jpm3";
+
+
+            if (!string.IsNullOrEmpty(User.UserName) && !string.IsNullOrEmpty(User.Password))
                 await LoginUserAsync();
         }
 
@@ -86,21 +94,37 @@ namespace Cookbook.App.ViewModels
 
             try
             {
-                User = await cookBookService.GetUserAsync(User);
-
-                if (string.IsNullOrEmpty(User.Token))
-                {
-                    Settings.Token = "";
-                    IsLoggedIn = false;
-                    IsLoggedOut = true;
-                }
-                else
+                if (User.ExpireDate != null && User.ExpireDate > DateTime.Now)
                 {
                     Settings.Token = User.Token;
                     IsLoggedIn = true;
                     IsLoggedOut = false;
+                    IsBusy = false;
+                    return;
                 }
-                IsBusy = false;
+                else
+                {
+                    User = await _cookBookService.GetUserAsync(User);
+                    if (string.IsNullOrEmpty(User.Token))
+                    {
+                        Settings.Token = "";
+                        IsLoggedIn = false;
+                        IsLoggedOut = true;
+                        await Shell.Current.DisplayAlert("Error!", "Username oder Password falsch", "OK");
+                    }
+                    else
+                    {
+                        Settings.Token = User.Token;
+                        IsLoggedIn = true;
+                        IsLoggedOut = false;
+
+                        if(User.Id == Guid.Empty)
+                            User.Id = Guid.NewGuid();
+
+                        await _userRepository.UpdateAsync(User);
+                    }
+
+                }
 
             }
             catch (Exception ex)

@@ -1,4 +1,5 @@
 ﻿using Cookbook.App.Models;
+using Cookbook.App.Repositories;
 using Cookbook.App.Services;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace Cookbook.App.ViewModels
     public class AddOrCreateItemViewModel : BaseViewModel
     {
         private readonly ICookBookService _cookBookService;
+        private readonly IItemRepository _itemRepository;
         private Item item;
         public Item Item
         {
@@ -29,10 +31,12 @@ namespace Cookbook.App.ViewModels
         public Command AddOrCreateItemCommand { get; set; }
 
 
-        public AddOrCreateItemViewModel(ICookBookService cookBookService)
+        public AddOrCreateItemViewModel(ICookBookService cookBookService, IItemRepository itemRepository)
         {
             _cookBookService = cookBookService;
-            AddOrCreateItemCommand = new Command(async() => await AddOrCreateItemAsync());
+            _itemRepository = itemRepository;
+            AddOrCreateItemCommand = new Command(async () => await AddOrCreateItemAsync());
+            
         }
 
         public async Task AddOrCreateItemAsync()
@@ -45,13 +49,16 @@ namespace Cookbook.App.ViewModels
             {
                 if (Item.Id == 0)
                 {
-                    //TODO: Wenn Prüfung stattgefunden hat, muss mit den Items in der Datenbank verglichen werden ob es schon existiert
+                    var newITem = await _cookBookService.CreateItemAsync(Item);
 
-                    await _cookBookService.CreateItemAsync(Item);
+                    if (newITem is not null)
+                        await _itemRepository.CreateAsync(newITem);
                 }
                 else
                 {
-                    await _cookBookService.UpdateItemAsync(Item, isInventory: true);
+                    Item.Inventory = true;
+                    await _cookBookService.UpdateItemAsync(Item);
+                    await _itemRepository.UpdateAsync(Item);
                 }
                 IsBusy = false;
                 await Shell.Current.Navigation.PopAsync();

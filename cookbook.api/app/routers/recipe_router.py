@@ -32,8 +32,10 @@ async def create_recipe(recipe_create_Dto: schemas.RecipeCreateDto, db: Session 
 @router.put("/recipes", status_code=status.HTTP_204_NO_CONTENT)
 async def update_recipe(recipe_update_dto: schemas.RecipeDto, db: Session = Depends(session.get_session), current_user: datamodels.User = Depends(get_current_user)) -> None:
     await repository.update_recipe(recipe=recipe_update_dto, db=db)
+    return status.HTTP_204_NO_CONTENT
 
 
 @router.delete("/recipes/{recipe_id}", status_code=status.HTTP_204_NO_CONTENT)
 async def delete_recipe(recipe_id: int, db: Session = Depends(session.get_session), current_user: datamodels.User = Depends(get_current_user)) -> None:
     await repository.delete_recipe(recipe_id=recipe_id, db=db)
+    return status.HTTP_204_NO_CONTENT

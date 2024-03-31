@@ -11,9 +11,13 @@
         VerticalOptions="StartAndExpand"
         Margin="10" 
         Padding="10">
-        
-        <Entry Margin="5" Text="{Binding Item.Name, Mode=TwoWay}" />
-        <Entry Margin="5" Text="{Binding Item.Quantity, Mode=TwoWay}" />
+        <Grid RowDefinitions="*,*" ColumnDefinitions="auto,*">
+            <Label Grid.Row="0" Grid.Column="0" Text="Name:" VerticalTextAlignment="Center"/>
+            <Entry Grid.Row="0" Grid.Column="1" Margin="5" Text="{Binding Item.Name, Mode=TwoWay}" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" />
+            <Label Grid.Row="1" Grid.Column="0" Text="Anzahl:" VerticalTextAlignment="Center"/>
+            <Entry Grid.Row="1" Grid.Column="1" Margin="5" Text="{Binding Item.Quantity, Mode=TwoWay}" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center"/>
+
+        </Grid> 
         <Button Margin="5" Text="Erstellen" Command="{Binding AddOrCreateItemCommand}" />
 
 

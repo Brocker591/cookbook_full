@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace Cookbook.App.Models
     public class Item : BaseModel
     {
         private int id;
+        [PrimaryKey]
         public int Id
         {
             get => id;

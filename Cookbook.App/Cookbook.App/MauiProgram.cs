@@ -1,4 +1,5 @@
-﻿using Cookbook.App.Services;
+﻿using Cookbook.App.Repositories;
+using Cookbook.App.Services;
 using Cookbook.App.ViewModels;
 using Cookbook.App.Views;
 using Microsoft.Extensions.Logging;
@@ -17,6 +18,15 @@ namespace Cookbook.App
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
+
+            DatabaseSetting databaseSetting = new(FileSystem.AppDataDirectory);
+
+            //Repositories
+            builder.Services.AddSingleton(databaseSetting);
+            builder.Services.AddSingleton<IUserRepository, UserRepository>();
+            builder.Services.AddSingleton<IItemRepository, ItemRepository>();
+
+
             //Services
             builder.Services.AddSingleton<ICookBookService, CookBookService>();
             

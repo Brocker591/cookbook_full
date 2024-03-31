@@ -16,12 +16,13 @@ public partial class ShoppingListPage : ContentPage
     {
         base.OnAppearing();
 
-        ViewModel.LoadData.Execute(this);
+        if(!ViewModel.FirstStart)
+            ViewModel.LoadDataFromDatabaseCommand.Execute(this);
     }
 
     private async void Entry_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
     {
-        if (MyFilterString is not null)
+        if (MyFilterString is not null &&  !ViewModel.FirstStart)
         {
             await ViewModel.FilterUnusedItems(MyFilterString.Text);
         }
