@@ -9,5 +9,7 @@ namespace Cookbook.App.Services
         Task<List<Item>> GetAllItemsAsync();
         Task UpdateItemAsync(Item item);
         Task<Item> CreateItemAsync(Item item);
+        Task<List<Recipe>> GetAllRecipesAsync();
+        Task<Recipe> CreateRecipeAsync(Recipe recipe);
     }
 }

@@ -42,5 +42,71 @@ namespace Cookbook.App.Models
                 quantity = item.Quantity
             };
         }
+
+        public static IngredientDto ToDto(this Ingredient ingredient)
+        {
+            return new IngredientDto
+            {
+                Id = ingredient.Id,
+                Name = ingredient.Name,
+                quantity = ingredient.Quantity,
+                RecipeId = ingredient.RecipeId
+            };
+        }
+
+        public static Ingredient ToModel(this IngredientDto ingredientDto)
+        {
+            return new Ingredient
+            {
+                Id = ingredientDto.Id,
+                Name = ingredientDto.Name,
+                Quantity = ingredientDto.quantity,
+                RecipeId = ingredientDto.RecipeId
+            };
+        }
+
+        public static IngredientCreateDto ToCreateDto(this Ingredient ingredient)
+        {
+            return new IngredientCreateDto
+            {
+                name = ingredient.Name,
+                quantity = ingredient.Quantity,
+                recipeId = ingredient.RecipeId
+            };
+        }
+
+        public static RecipeDto ToDto(this Recipe recipe)
+        {
+            return new RecipeDto
+            {
+                Id = recipe.Id,
+                Name = recipe.Name,
+                Preparation = recipe.Preparation,
+                Ingredients = recipe.Ingredients.Select(i => i.ToDto()).ToList()
+            };
+        }
+
+        public static Recipe ToModel(this RecipeDto recipeDto)
+        {
+            return new Recipe
+            {
+                Id = recipeDto.Id,
+                Name = recipeDto.Name,
+                Preparation = recipeDto.Preparation,
+                Ingredients = recipeDto.Ingredients.Select(i => i.ToModel()).ToList()
+            };
+        }
+
+        public static RecipeCreateDto ToCreateDto(this Recipe recipe)
+        {
+            return new RecipeCreateDto
+            {
+                name = recipe.Name,
+                preparation = recipe.Preparation,
+                ingredients = recipe.Ingredients.Select(i => i.ToCreateDto()).ToList()
+            };
+        }
+
+
     }
 }

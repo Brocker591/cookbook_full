@@ -14,7 +14,7 @@ class IngredientDto(IngredientBaseDto):
 
 
 class RecipeBaseDto(BaseModel):
-    description: str
+    name: str
     preparation: str
 
 

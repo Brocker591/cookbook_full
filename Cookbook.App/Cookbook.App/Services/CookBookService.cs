@@ -139,5 +139,50 @@ namespace Cookbook.App.Services
                 throw new HttpRequestException("Error creating item");
 
         }
+
+        public async Task<List<Recipe>> GetAllRecipesAsync()
+        {
+            if (string.IsNullOrEmpty(Settings.Token))
+                throw new HttpRequestException("No Token");
+
+            using var request = new HttpRequestMessage(HttpMethod.Get, "/recipes");
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", Settings.Token);
+
+            using var response = await Client.SendAsync(request);
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                var recipesDto = JsonConvert.DeserializeObject<List<RecipeDto>>(json);
+                List<Recipe> recipes = recipesDto.Select(x => x.ToModel()).ToList();
+
+                return recipes;
+            }
+            else
+                throw new HttpRequestException("Error getting recipes");
+
+        }
+
+        public async Task<Recipe> CreateRecipeAsync(Recipe recipe)
+        {
+            if (string.IsNullOrEmpty(Settings.Token))
+                throw new HttpRequestException("No Token");
+
+            var recipeCreateDto = recipe.ToCreateDto();
+
+            using var request = new HttpRequestMessage(HttpMethod.Post, "/recipes");
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", Settings.Token);
+
+            request.Content = new StringContent(JsonConvert.SerializeObject(recipeCreateDto), Encoding.UTF8, "application/json");
+
+            using var response = await Client.SendAsync(request);
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                var recipeDto = JsonConvert.DeserializeObject<RecipeDto>(json);
+                return recipeDto.ToModel();
+            }
+            else
+                throw new HttpRequestException("Error creating recipe");
+        }
     }
 }

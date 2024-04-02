@@ -6,7 +6,7 @@ from app.schemas import RecipeDto, RecipeCreateDto, IngredientDto
 
 async def create_recipe(recipe: RecipeCreateDto, db: Session) -> RecipeDto:
     exist_reicpe_name = db.query(datamodels.Recipe).filter(
-        datamodels.Recipe.description == recipe.description).first()
+        datamodels.Recipe.name == recipe.name).first()
 
     if exist_reicpe_name:
         raise HTTPException(
@@ -15,7 +15,7 @@ async def create_recipe(recipe: RecipeCreateDto, db: Session) -> RecipeDto:
     list_ingredient = [datamodels.Ingredient(
         name=x.name, quantity=x.quantity) for x in recipe.ingredients]
 
-    db_recipe = datamodels.Recipe(description=recipe.description,
+    db_recipe = datamodels.Recipe(name=recipe.name,
                                   preparation=recipe.preparation, ingredients=list_ingredient)
     db.add(db_recipe)
     db.commit()
@@ -40,7 +40,7 @@ async def get_all_recipe(db: Session) -> List[RecipeDto]:
         ingredient_dto = [IngredientDto(
             id=x.id, name=x.name, quantity=x.quantity, recipe_id=x.recipe_id) for x in recipe.ingredients]
 
-        recipe_dto = RecipeDto(id=recipe.id, description=recipe.description,
+        recipe_dto = RecipeDto(id=recipe.id, name=recipe.name,
                                preparation=recipe.preparation,  ingredients=ingredient_dto)
         all_recipe_dto.append(recipe_dto)
 
@@ -53,7 +53,7 @@ async def get_recipe(recipe_id: int, db: Session) -> RecipeDto:
     ingredient_dto = [IngredientDto(
         id=x.id, name=x.name, quantity=x.quantity, recipe_id=x.recipe_id) for x in recipe.ingredients]
 
-    recipe_dto = RecipeDto(id=recipe.id, description=recipe.description,
+    recipe_dto = RecipeDto(id=recipe.id, name=recipe.name,
                            preparation=recipe.preparation,  ingredients=ingredient_dto)
     return recipe_dto
 
@@ -61,7 +61,7 @@ async def get_recipe(recipe_id: int, db: Session) -> RecipeDto:
 async def update_recipe(recipe: RecipeDto, db: Session) -> None:
     exist_recipe = await get_recipe_datamodel(recipe_id=recipe.id, db=db)
 
-    exist_recipe.description = recipe.description
+    exist_recipe.name = recipe.name
     exist_recipe.preparation = recipe.preparation
 
     for ingredient in recipe.ingredients:

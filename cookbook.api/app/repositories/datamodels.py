@@ -21,7 +21,7 @@ class User(session.Base):
 class Recipe(session.Base):
     __tablename__ = "recipes"
     id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
-    description = Column(String, nullable=False)
+    name = Column(String, nullable=False)
     preparation = Column(String, nullable=False)
     ingredients: Mapped[List["Ingredient"]] = relationship(
         back_populates="recipe", cascade="all,delete")
