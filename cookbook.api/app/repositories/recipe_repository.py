@@ -10,7 +10,7 @@ async def create_recipe(recipe: RecipeCreateDto, db: Session) -> RecipeDto:
 
     if exist_reicpe_name:
         raise HTTPException(
-            status_code=status.HTTP_409_CONFLICT, detail="ingredients exist")
+            status_code=status.HTTP_409_CONFLICT, detail="recipe exist")
 
     list_ingredient = [datamodels.Ingredient(
         name=x.name, quantity=x.quantity) for x in recipe.ingredients]
@@ -27,7 +27,11 @@ async def create_recipe(recipe: RecipeCreateDto, db: Session) -> RecipeDto:
     #     ingredient_repository.create_ingredient(
     #         ingredient_base=ingredient, db=db, recipe_id=db_recipe.id)
 
-    created_recipe = RecipeDto(**db_recipe.model_dump())
+    
+
+    list_of_ingredients_dto = [IngredientDto(id=item.id, name=item.name, quantity = item.quantity, recipe_id=item.recipe_id) for item in db_recipe.ingredients]
+
+    created_recipe = RecipeDto(id=db_recipe.id, name=db_recipe.name, preparation=db_recipe.preparation, ingredients=list_of_ingredients_dto)
     return created_recipe
 
 

@@ -9,6 +9,8 @@ namespace Cookbook.App
             InitializeComponent();
 
             Routing.RegisterRoute(nameof(AddOrCreateItemPage), typeof(AddOrCreateItemPage));
+            Routing.RegisterRoute(nameof(RecipeShowPage), typeof(RecipeShowPage));
+            Routing.RegisterRoute(nameof(RecipeManagePage), typeof(RecipeManagePage));
         }
     }
 }

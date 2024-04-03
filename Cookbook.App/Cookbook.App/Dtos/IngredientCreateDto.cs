@@ -10,6 +10,6 @@ namespace Cookbook.App.Dtos
     {
         public string name { get; set; }
         public string quantity { get; set; }
-        public int? recipeId { get; set; }
+        public int? recipe_id { get; set; }
     }
 }

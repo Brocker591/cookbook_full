@@ -34,11 +34,17 @@ namespace Cookbook.App
             builder.Services.AddSingleton<MainPageViewModel>();
             builder.Services.AddSingleton<ShoppingListViewModel>();
             builder.Services.AddSingleton<AddOrCreateItemViewModel>();
+            builder.Services.AddSingleton<RecipeListViewModel>();
+            builder.Services.AddSingleton<RecipeManageViewModel>();
+            builder.Services.AddSingleton<RecipeShowViewModel>();
 
             //Views
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<ShoppingListPage>();
             builder.Services.AddSingleton<AddOrCreateItemPage>();
+            builder.Services.AddSingleton<RecipeListPage>();
+            builder.Services.AddSingleton<RecipeManagePage>();
+            builder.Services.AddSingleton<RecipeShowPage>();
 
 
 #if DEBUG

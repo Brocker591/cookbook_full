@@ -71,7 +71,7 @@ namespace Cookbook.App.Models
             {
                 name = ingredient.Name,
                 quantity = ingredient.Quantity,
-                recipeId = ingredient.RecipeId
+                recipe_id = ingredient.RecipeId
             };
         }
 
