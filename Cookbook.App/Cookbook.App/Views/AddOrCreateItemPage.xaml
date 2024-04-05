@@ -17,8 +17,8 @@
             <Label Grid.Row="1" Grid.Column="0" Text="Anzahl:" VerticalTextAlignment="Center"/>
             <Entry Grid.Row="1" Grid.Column="1" Margin="5" Text="{Binding Item.Quantity, Mode=TwoWay}" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center"/>
 
-        </Grid> 
-        <Button Margin="5" Text="Erstellen" Command="{Binding AddOrCreateItemCommand}" />
+        </Grid>
+        <Button Margin="5" Text="Erstellen" Style="{StaticResource ButtonOutline}" Command="{Binding AddOrCreateItemCommand}" />
 
 
     </VerticalStackLayout>

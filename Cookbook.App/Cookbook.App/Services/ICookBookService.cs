@@ -11,5 +11,6 @@ namespace Cookbook.App.Services
         Task<Item> CreateItemAsync(Item item);
         Task<List<Recipe>> GetAllRecipesAsync();
         Task<Recipe> CreateRecipeAsync(Recipe recipe);
+        Task UpdateRecipeAsync(Recipe recipe);
     }
 }

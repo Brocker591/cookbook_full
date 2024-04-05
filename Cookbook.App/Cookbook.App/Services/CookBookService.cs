@@ -184,5 +184,24 @@ namespace Cookbook.App.Services
             else
                 throw new HttpRequestException("Error creating recipe");
         }
+
+        public async Task UpdateRecipeAsync(Recipe recipe)
+        {
+            if (string.IsNullOrEmpty(Settings.Token))
+                throw new HttpRequestException("No Token");
+
+            var recipeUpdateDto = recipe.ToUpdateDto();
+
+            using var request = new HttpRequestMessage(HttpMethod.Put, "/recipes");
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", Settings.Token);
+
+            request.Content = new StringContent(JsonConvert.SerializeObject(recipeUpdateDto), Encoding.UTF8, "application/json");
+
+            using var response = await Client.SendAsync(request);
+            if (response.IsSuccessStatusCode)
+                return;
+            else
+                throw new HttpRequestException("Error updating recipe");
+        }   
     }
 }

@@ -11,4 +11,12 @@ public partial class RecipeManagePage : ContentPage
         ViewModel = viewModel;
         BindingContext = viewModel;
     }
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+
+        ViewModel.LoadIngredientCommand.Execute(this);
+    }
 }

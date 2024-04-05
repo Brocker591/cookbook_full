@@ -31,7 +31,7 @@ class Ingredient(session.Base):
     __tablename__ = "ingredients"
     id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     name = Column(String, nullable=False)
-    quantity = Column(String, nullable=False)
+    quantity = Column(String, nullable=True)
 
     recipe_id: Mapped[int] = mapped_column(ForeignKey("recipes.id"))
     recipe: Mapped["Recipe"] = relationship(back_populates="ingredients")

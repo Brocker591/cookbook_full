@@ -26,11 +26,10 @@
                     <DataTemplate x:DataType="model:Ingredient">
                         <Grid Margin="0,5,0,0">
                             <Frame Style="{StaticResource CardView}" HeightRequest="50">
-                                <Grid ColumnDefinitions="auto,*,auto,*">
-                                    <Label Grid.Column="0" Margin="2" Text="Zutat:" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
-                                    <Label Grid.Column="1" Margin="2" Text="{Binding Name, Mode=TwoWay}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
-                                    <Label Grid.Column="2" Margin="2" Text="Menge:" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
-                                    <Label Grid.Column="3" Margin="2" Text="{Binding Quantity, Mode=TwoWay}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                                <Grid ColumnDefinitions="*,auto,*">
+                                    <Label Grid.Column="0" Margin="2" Text="{Binding Name, Mode=TwoWay}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                                    <BoxView Grid.Column="1" Margin="5"  BackgroundColor="#3D5AFE" WidthRequest="3" />
+                                    <Label Grid.Column="2" Margin="2" Text="{Binding Quantity, Mode=TwoWay}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
                                 </Grid>
                             </Frame>
                         </Grid>
@@ -40,8 +39,8 @@
             <BoxView Grid.Row="3" Grid.ColumnSpan="2" Margin="0,10,0,0"  BackgroundColor="#3D5AFE" HeightRequest="2" />
             <Label Grid.Row="4" Grid.Column="0" Margin="5,5,5,20" VerticalOptions="StartAndExpand" Text="Zubereitung:" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" />
             <Label Grid.Row="4" Grid.Column="1" Margin="5" VerticalOptions="StartAndExpand" HeightRequest="300" Text="{Binding Recipe.Preparation, Mode=TwoWay}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"/>
-            <Button Grid.Row="5" Grid.ColumnSpan="2" Margin="5" Text="Rezept bearbeiten" Command="{Binding GoToRecipeManageCommand}" />
-            <Button Grid.Row="6" Grid.ColumnSpan="2" Margin="5" Text="zurück" Command="{Binding GoPageBackCommand}" />
+            <Button Grid.Row="5" Grid.ColumnSpan="2" Margin="5" Text="Rezept bearbeiten" Style="{StaticResource ButtonOutline}" Command="{Binding GoToRecipeManageCommand}" />
+            <Button Grid.Row="6" Grid.ColumnSpan="2" Margin="5" Text="zurück" Style="{StaticResource ButtonOutline}" Command="{Binding GoPageBackCommand}" />
         </Grid>
     </ScrollView>
 </ContentPage>

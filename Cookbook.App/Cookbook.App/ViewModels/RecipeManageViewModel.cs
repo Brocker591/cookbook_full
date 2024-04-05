@@ -1,11 +1,6 @@
 ﻿using Cookbook.App.Models;
 using Cookbook.App.Services;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Cookbook.App.ViewModels
 {
@@ -28,6 +23,8 @@ namespace Cookbook.App.ViewModels
         }
 
         public ObservableCollection<Ingredient> IngredientList { get; } = new();
+
+        public Command LoadIngredientCommand { get; set; }
         public Command SaveRecipeCommand { get; set; }
         public Command AddIngriedientCommand { get; set; }
         public Command RemoveIngriedientCommand { get; set; }
@@ -37,20 +34,32 @@ namespace Cookbook.App.ViewModels
         public RecipeManageViewModel(ICookBookService cookBookService)
         {
             _cookBookService = cookBookService;
+            LoadIngredientCommand = new Command(async () => await LoadIngredientAsync());
             SaveRecipeCommand = new Command(async () => await SaveRecipeAsync());
             AddIngriedientCommand = new Command(async () => await AddIngriedientAsync());
             RemoveIngriedientCommand = new Command(async (ingredient) => await RemoveIngriedientAsync((Ingredient)ingredient));
             GoPageBackCommand = new Command(async () => await GoPageBack());
 
+
+
+        }
+
+        private async Task LoadIngredientAsync()
+        {
+            IngredientList.Clear();
+
+
             if (Recipe != null && Recipe.Ingredients != null)
             {
-                foreach(var ingredient in Recipe.Ingredients)
+                foreach (var ingredient in Recipe.Ingredients)
                 {
                     IngredientList.Add(ingredient);
                 }
             }
 
         }
+
+
 
         private async Task AddIngriedientAsync()
         {
@@ -106,7 +115,7 @@ namespace Cookbook.App.ViewModels
 
             try
             {
-                if(Recipe.Id == 0)
+                if (Recipe.Id == 0)
                 {
                     Recipe.Ingredients = IngredientList.ToList();
                     await _cookBookService.CreateRecipeAsync(Recipe);
@@ -116,9 +125,18 @@ namespace Cookbook.App.ViewModels
                 }
                 else
                 {
-                    //Update Implementieren
+                    Recipe.Ingredients = IngredientList.ToList();
+
+                    foreach (var ingredient in Recipe.Ingredients)
+                    {
+                        ingredient.RecipeId = Recipe.Id;
+                    }
+
+
+                    await _cookBookService.UpdateRecipeAsync(Recipe);
+                    await Shell.Current.Navigation.PopAsync();
                 }
-                    
+
             }
             catch (Exception ex)
             {

@@ -58,6 +58,7 @@
                 Grid.ColumnSpan="2"
                 Margin="5"
                 Text="Login"
+                Style="{StaticResource ButtonOutline}"
                 Command="{Binding LoginUserCommand}"/>
             </Grid>
             <Grid RowDefinitions="*,auto,auto,auto"  HorizontalOptions="Center" Margin="10" Padding="20" IsVisible="{Binding IsLoggedIn}">
@@ -88,6 +89,7 @@
                 Grid.ColumnSpan="2"
                 Margin="5"
                 Text="Logout"
+                Style="{StaticResource ButtonOutline}"
                 Command="{Binding LogoutUserCommand}"/>
             </Grid>
 

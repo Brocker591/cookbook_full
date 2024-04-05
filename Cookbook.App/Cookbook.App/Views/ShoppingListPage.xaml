@@ -41,7 +41,7 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
             <Entry Grid.Row="1" Grid.Column="0" Margin="5" Placeholder="Suche..." x:Name="MyFilterString" PropertyChanged="Entry_PropertyChanged"/>
-            <Button Grid.Row="1" Grid.Column="1" Margin="5" Text="Erstellen" Command="{Binding GoToCreateItemCommand}" />
+            <Button Grid.Row="1" Grid.Column="1" Margin="5" Text="Erstellen" Style="{StaticResource ButtonOutline}" Command="{Binding GoToCreateItemCommand}" />
             <CollectionView
                 Grid.Row="3"
                 Grid.ColumnSpan="2"

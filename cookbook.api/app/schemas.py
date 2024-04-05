@@ -5,7 +5,7 @@ from pydantic import BaseModel
 
 class IngredientBaseDto(BaseModel):
     name: str
-    quantity: str
+    quantity: Optional[str] = None
     recipe_id: int
 
 

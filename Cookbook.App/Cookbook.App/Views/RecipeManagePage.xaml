@@ -29,7 +29,7 @@
                                     <Entry Grid.Column="1" Margin="2" Text="{Binding Name, Mode=TwoWay}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
                                     <Label Grid.Column="2" Margin="2" Text="Menge:" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
                                     <Entry Grid.Column="3" Margin="2" Text="{Binding Quantity, Mode=TwoWay}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
-                                    <Button Grid.Column="4" Text="löschen" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:RecipeManageViewModel}}, Path=RemoveIngriedientCommand}"
+                                    <Button Grid.Column="4" Text="löschen" Style="{StaticResource ButtonOutline}" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:RecipeManageViewModel}}, Path=RemoveIngriedientCommand}"
                                     CommandParameter="{Binding .}"/>
                                 </Grid>
                             </Frame>
@@ -37,11 +37,11 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <Button Grid.Row="3" Margin="5" Text="Zutat hinzufügen" Command="{Binding AddIngriedientCommand}" />
+            <Button Grid.Row="3" Margin="5" Text="Zutat hinzufügen" Style="{StaticResource ButtonOutline}" Command="{Binding AddIngriedientCommand}" />
             <Label Grid.Row="4" Margin="5" VerticalOptions="StartAndExpand" Text="Zubereitung:"/>
             <Editor Grid.Row="5" Margin="5" VerticalOptions="StartAndExpand" HeightRequest="300" Text="{Binding Recipe.Preparation, Mode=TwoWay}"/>
-            <Button Grid.Row="6" Margin="5" Text="speichern" Command="{Binding SaveRecipeCommand}" />
-            <Button Grid.Row="7" Margin="5" Text="zurück" Command="{Binding GoPageBackCommand}" />
+            <Button Grid.Row="6" Margin="5" Text="speichern" Style="{StaticResource ButtonOutline}" Command="{Binding SaveRecipeCommand}" />
+            <Button Grid.Row="7" Margin="5" Text="zurück" Style="{StaticResource ButtonOutline}" Command="{Binding GoPageBackCommand}" />
         </Grid>
     </ScrollView>
 </ContentPage>
