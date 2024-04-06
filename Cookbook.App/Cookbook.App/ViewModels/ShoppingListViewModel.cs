@@ -56,12 +56,12 @@ namespace Cookbook.App.ViewModels
             GoToCreateItemCommand = new Command(async () => await GoToCreateItemAsync());
             GoToUpdateItemCommand = new Command<Item>(async (item) => await GoToUpdateItemAsync(item));
 
-            if (FirstStart)
-            {
+            //if (FirstStart)
+            //{
 
-                LoadDataFromServerCommand.Execute(this);
-                FirstStart = false;
-            }
+            //    LoadDataFromServerCommand.Execute(this);
+            //    FirstStart = false;
+            //}
 
         }
 

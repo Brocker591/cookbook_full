@@ -39,3 +39,9 @@ async def update_recipe(recipe_update_dto: schemas.RecipeDto, db: Session = Depe
 async def delete_recipe(recipe_id: int, db: Session = Depends(session.get_session), current_user: datamodels.User = Depends(get_current_user)) -> None:
     await repository.delete_recipe(recipe_id=recipe_id, db=db)
     return status.HTTP_204_NO_CONTENT
+
+
+@router.post("/recipes/shoplist/{recipe_id}", status_code=status.HTTP_201_CREATED)
+async def add_ingredient_to_shoplist(recipe_id: int, db: Session = Depends(session.get_session), current_user: datamodels.User = Depends(get_current_user)) -> None:
+    await repository.add_ingredient_to_shoplist(recipe_id=recipe_id, db=db)
+    return status.HTTP_201_CREATED

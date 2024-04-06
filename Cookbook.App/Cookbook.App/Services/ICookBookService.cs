@@ -12,5 +12,7 @@ namespace Cookbook.App.Services
         Task<List<Recipe>> GetAllRecipesAsync();
         Task<Recipe> CreateRecipeAsync(Recipe recipe);
         Task UpdateRecipeAsync(Recipe recipe);
+
+        Task AddIngredientToShoplist(int recipeId);
     }
 }

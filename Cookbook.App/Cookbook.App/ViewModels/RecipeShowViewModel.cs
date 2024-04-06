@@ -13,6 +13,7 @@ namespace Cookbook.App.ViewModels
     public class RecipeShowViewModel : BaseViewModel
     {
         private readonly ICookBookService _cookBookService;
+        private readonly ShoppingListViewModel ShoppingListViewModel;
         private Recipe recipe;
         public Recipe Recipe
         {
@@ -30,13 +31,16 @@ namespace Cookbook.App.ViewModels
 
         public Command GoToRecipeManageCommand { get; set; }
         public Command GoPageBackCommand { get; set; }
+        public Command AddIngredientToShoplist { get; set; }
 
 
-        public RecipeShowViewModel(ICookBookService cookBookService)
+        public RecipeShowViewModel(ICookBookService cookBookService, ShoppingListViewModel shoppingListViewModel)
         {
             _cookBookService = cookBookService;
             GoToRecipeManageCommand = new Command(async () => await GoToRecipeManageAsync());
             GoPageBackCommand = new Command(async () => await GoPageBack());
+            AddIngredientToShoplist = new Command(async () => await AddIngredientToShoplistAsync());
+            ShoppingListViewModel = shoppingListViewModel;
         }
 
         public async Task GoToRecipeManageAsync()
@@ -45,6 +49,31 @@ namespace Cookbook.App.ViewModels
             {
                 {nameof(Models.Recipe), Recipe }
             });
+        }
+
+        public async Task AddIngredientToShoplistAsync()
+        {
+
+            if (IsBusy)
+                return;
+
+            IsBusy = true;
+
+            try
+            {
+                await _cookBookService.AddIngredientToShoplist(Recipe.Id);
+                IsBusy = false;
+                ShoppingListViewModel.FirstStart = true;
+                await Shell.Current.Navigation.PopAsync();
+            }
+            catch (Exception ex)
+            {
+                await Shell.Current.DisplayAlert("Error!", ex.Message, "OK");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
     }
 }

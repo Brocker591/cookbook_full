@@ -202,6 +202,21 @@ namespace Cookbook.App.Services
                 return;
             else
                 throw new HttpRequestException("Error updating recipe");
-        }   
+        }
+        
+        public async Task AddIngredientToShoplist(int recipeId)
+        {
+            if (string.IsNullOrEmpty(Settings.Token))
+                throw new HttpRequestException("No Token");
+
+            using var request = new HttpRequestMessage(HttpMethod.Post, $"/recipes/shoplist/{recipeId}");
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", Settings.Token);
+
+            using var response = await Client.SendAsync(request);
+            if (response.IsSuccessStatusCode)
+                return;
+            else
+                throw new HttpRequestException("Error updating recipe");
+        }
     }
 }

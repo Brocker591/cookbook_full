@@ -4,6 +4,7 @@ from typing import List
 from app.repositories import datamodels, ingredient_repository
 from app.schemas import RecipeDto, RecipeCreateDto, IngredientDto
 
+
 async def create_recipe(recipe: RecipeCreateDto, db: Session) -> RecipeDto:
     exist_reicpe_name = db.query(datamodels.Recipe).filter(
         datamodels.Recipe.name == recipe.name).first()
@@ -27,11 +28,11 @@ async def create_recipe(recipe: RecipeCreateDto, db: Session) -> RecipeDto:
     #     ingredient_repository.create_ingredient(
     #         ingredient_base=ingredient, db=db, recipe_id=db_recipe.id)
 
-    
+    list_of_ingredients_dto = [IngredientDto(
+        id=item.id, name=item.name, quantity=item.quantity, recipe_id=item.recipe_id) for item in db_recipe.ingredients]
 
-    list_of_ingredients_dto = [IngredientDto(id=item.id, name=item.name, quantity = item.quantity, recipe_id=item.recipe_id) for item in db_recipe.ingredients]
-
-    created_recipe = RecipeDto(id=db_recipe.id, name=db_recipe.name, preparation=db_recipe.preparation, ingredients=list_of_ingredients_dto)
+    created_recipe = RecipeDto(id=db_recipe.id, name=db_recipe.name,
+                               preparation=db_recipe.preparation, ingredients=list_of_ingredients_dto)
     return created_recipe
 
 
@@ -100,3 +101,33 @@ async def get_recipe_datamodel(recipe_id: int, db: Session) -> datamodels.Recipe
             status_code=status.HTTP_404_NOT_FOUND, detail="recipe not found")
 
     return exist_recipe
+
+
+async def add_ingredient_to_shoplist(recipe_id: int, db: Session) -> None:
+    recipe = await get_recipe_datamodel(recipe_id=recipe_id, db=db)
+
+    for ingredient in recipe.ingredients:
+        item_exist = db.query(datamodels.Item).filter(
+            datamodels.Item.name == ingredient.name).first()
+
+        if item_exist:
+
+            if not item_exist.quantity:
+                item_exist.quantity = ""
+
+            if not ingredient.quantity:
+                ingredient.quantity = ""
+
+            if item_exist.inventory:
+                item_exist.quantity += " Rezept:" + ingredient.quantity
+            else:
+                item_exist.quantity = ingredient.quantity
+            item_exist.inventory = True
+            db.add(item_exist)
+
+        else:
+
+            item = datamodels.Item(
+                name=ingredient.name, quantity=ingredient.quantity, inventory=True)
+            db.add(item)
+    db.commit()

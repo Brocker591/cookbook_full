@@ -37,6 +37,7 @@ namespace Cookbook.App.ViewModels
 
             try
             {
+                RecipeList.Clear();
                 var recipes = await _cookBookService.GetAllRecipesAsync();
 
                 foreach(var recipe in recipes)
