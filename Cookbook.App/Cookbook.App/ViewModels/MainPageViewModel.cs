@@ -92,6 +92,8 @@ namespace Cookbook.App.ViewModels
             if (IsBusy)
                 return;
 
+            IsBusy = true;
+
             try
             {
                 if (User.ExpireDate != null && User.ExpireDate > DateTime.Now)

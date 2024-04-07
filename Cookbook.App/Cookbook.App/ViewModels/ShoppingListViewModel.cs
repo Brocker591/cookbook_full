@@ -109,6 +109,7 @@ namespace Cookbook.App.ViewModels
             {
                 var itemList = await _cookBookService.GetAllItemsAsync();
                 await _itemRepository.UpdateItemsFromServerAsync(itemList);
+                FirstStart = false;
                 IsBusy = false;
                 await LoadDataFromDatabaseAsync();
 

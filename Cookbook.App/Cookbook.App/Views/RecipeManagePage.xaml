@@ -1,47 +1,31 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Cookbook.App.Views.RecipeManagePage"
-             xmlns:model="clr-namespace:Cookbook.App.Models"
-             xmlns:viewmodel="clr-namespace:Cookbook.App.ViewModels"
-             x:DataType="viewmodel:RecipeManageViewModel"
-             Shell.BackgroundColor="#3D5AFE"
-             Title="Rezept Verwaltung">
-    <ScrollView>
-        <Grid 
-            VerticalOptions="StartAndExpand"
-            Margin="10" 
-            Padding="10" 
-            RowDefinitions="auto,auto,*,auto,auto,auto,auto,auto">
-            <Label Grid.Row="0" Margin="5" Text="Name:" />
-            <Entry Grid.Row="1" Margin="5" Text="{Binding Recipe.Name, Mode=TwoWay}" />
-            <CollectionView
-                Grid.Row="2"
-                Margin="5"
-                ItemsSource="{Binding IngredientList, Mode=TwoWay}">
-
-                <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="model:Ingredient">
-                        <Grid Margin="0,5,0,0">
-                            <Frame Style="{StaticResource CardView}">
-                                <Grid ColumnDefinitions="auto, *,auto,*, auto">
-                                    <Label Grid.Column="0"  Margin="2" Text="Zutat:" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
-                                    <Entry Grid.Column="1" Margin="2" Text="{Binding Name, Mode=TwoWay}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
-                                    <Label Grid.Column="2" Margin="2" Text="Menge:" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
-                                    <Entry Grid.Column="3" Margin="2" Text="{Binding Quantity, Mode=TwoWay}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
-                                    <Button Grid.Column="4" Text="löschen" Style="{StaticResource ButtonOutline}" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:RecipeManageViewModel}}, Path=RemoveIngriedientCommand}"
-                                    CommandParameter="{Binding .}"/>
-                                </Grid>
-                            </Frame>
-                        </Grid>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-            <Button Grid.Row="3" Margin="5" Text="Zutat hinzufügen" Style="{StaticResource ButtonOutline}" Command="{Binding AddIngriedientCommand}" />
-            <Label Grid.Row="4" Margin="5" VerticalOptions="StartAndExpand" Text="Zubereitung:"/>
-            <Editor Grid.Row="5" Margin="5" VerticalOptions="StartAndExpand" HeightRequest="300" Text="{Binding Recipe.Preparation, Mode=TwoWay}"/>
-            <Button Grid.Row="6" Margin="5" Text="speichern" Style="{StaticResource ButtonOutline}" Command="{Binding SaveRecipeCommand}" />
-            <Button Grid.Row="7" Margin="5" Text="zurück" Style="{StaticResource ButtonOutline}" Command="{Binding GoPageBackCommand}" />
-        </Grid>
-    </ScrollView>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Cookbook.App.Views.RecipeManagePage" xmlns:model="clr-namespace:Cookbook.App.Models" xmlns:viewmodel="clr-namespace:Cookbook.App.ViewModels" x:DataType="viewmodel:RecipeManageViewModel" Shell.BackgroundColor="#3D5AFE" Title="Rezept Verwaltung">
+	<ScrollView>
+		<Grid VerticalOptions="StartAndExpand" Margin="10" Padding="10" RowDefinitions="auto,auto,*,auto,auto,auto,auto,auto">
+			<Label Grid.Row="0" Margin="5" Text="Name:"/>
+			<Entry Grid.Row="1" Margin="5" Text="{Binding Recipe.Name, Mode=TwoWay}"/>
+			<CollectionView Grid.Row="2" Margin="5" ItemsSource="{Binding IngredientList, Mode=TwoWay}">
+				<CollectionView.ItemTemplate>
+					<DataTemplate x:DataType="model:Ingredient">
+						<Grid Margin="0,5,0,0">
+							<Frame Style="{StaticResource CardView}">
+								<Grid ColumnDefinitions="auto, *,auto,*, auto">
+									<Label Grid.Column="0" Margin="2" Text="Zutat:" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+									<Entry Grid.Column="1" Margin="2" Text="{Binding Name, Mode=TwoWay}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+									<Label Grid.Column="2" Margin="2" Text="Menge:" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+									<Entry Grid.Column="3" Margin="2" Text="{Binding Quantity, Mode=TwoWay}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+									<Button Grid.Column="4" Text="löschen" Style="{StaticResource ButtonOutline}" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:RecipeManageViewModel}}, Path=RemoveIngriedientCommand}" CommandParameter="{Binding .}"/>
+								</Grid>
+							</Frame>
+						</Grid>
+					</DataTemplate>
+				</CollectionView.ItemTemplate>
+			</CollectionView>
+			<Button Grid.Row="3" Margin="5" Text="Zutat hinzufügen" Style="{StaticResource ButtonOutline}" Command="{Binding AddIngriedientCommand}"/>
+			<Label Grid.Row="4" Margin="5" VerticalOptions="StartAndExpand" Text="Zubereitung:"/>
+			<Editor Grid.Row="5" Margin="5" VerticalOptions="StartAndExpand" HeightRequest="300" Text="{Binding Recipe.Preparation, Mode=TwoWay}"/>
+			<Button Grid.Row="6" Margin="5" Text="speichern" Style="{StaticResource ButtonOutline}" Command="{Binding SaveRecipeCommand}"/>
+			<Button Grid.Row="7" Margin="5" Text="zurück" Style="{StaticResource ButtonOutline}" Command="{Binding GoPageBackCommand}"/>
+		</Grid>
+	</ScrollView>
 </ContentPage>

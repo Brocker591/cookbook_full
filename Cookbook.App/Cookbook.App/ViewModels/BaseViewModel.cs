@@ -36,6 +36,32 @@ namespace Cookbook.App.ViewModels
             }
         }
 
+        public bool isLoggedIn;
+        public bool IsLoggedIn
+        {
+            get => isLoggedIn;
+            set
+            {
+                if (isLoggedIn == value)
+                    return;
+                isLoggedIn = value;
+                this.IsNotLoggedIn = !isLoggedIn;
+                this.OnPropertyChanged();
+            }
+        }
+        public bool isNotLoggedIn = true;
+        public bool IsNotLoggedIn
+        {
+            get => isNotLoggedIn;
+            set
+            {
+                if (isNotLoggedIn == value)
+                    return;
+                isNotLoggedIn = value;
+                this.OnPropertyChanged();
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public void OnPropertyChanged([CallerMemberName] string name = null)
@@ -55,6 +81,16 @@ namespace Cookbook.App.ViewModels
             {
                 await Shell.Current.DisplayAlert("Error!", ex.Message, "OK");
             }
+        }
+
+        public Task CheckIsLoggedIn()
+        {
+            if (string.IsNullOrEmpty(Settings.Token))
+                IsLoggedIn = false;
+            else
+                IsLoggedIn = true;
+
+            return Task.CompletedTask;
         }
     }
 }

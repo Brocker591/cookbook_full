@@ -17,5 +17,7 @@ public partial class RecipeListPage : ContentPage
         base.OnAppearing();
 
         ViewModel.LoadDataFromServerCommand.Execute(this);
+
+        ViewModel.CheckIsLoggedIn();
     }
 }
