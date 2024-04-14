@@ -79,10 +79,6 @@ namespace Cookbook.App.ViewModels
             else
                 User = new User();
 
-            //User.UserName = "admin";
-            //User.Password = "e8v55pgEaZ7Jpm3";
-
-
             if (!string.IsNullOrEmpty(User.UserName) && !string.IsNullOrEmpty(User.Password))
                 await LoginUserAsync();
         }
@@ -120,7 +116,7 @@ namespace Cookbook.App.ViewModels
                         IsLoggedIn = true;
                         IsLoggedOut = false;
 
-                        if(User.Id == Guid.Empty)
+                        if (User.Id == Guid.Empty)
                             User.Id = Guid.NewGuid();
 
                         await _userRepository.UpdateAsync(User);
