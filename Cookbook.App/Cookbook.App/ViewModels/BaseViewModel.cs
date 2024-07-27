@@ -1,96 +1,91 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Cookbook.App.ViewModels
+
+namespace Cookbook.App.ViewModels;
+
+public partial class BaseViewModel : INotifyPropertyChanged
 {
-    public partial class BaseViewModel : INotifyPropertyChanged
+    public bool isBusy;
+    public bool IsBusy
     {
-        public bool isBusy;
-        public bool IsBusy
+        get => isBusy;
+        set
         {
-            get => isBusy;
-            set
-            {
-                if (isBusy == value)
-                    return;
-                isBusy = value;
-                this.IsNotBusy = !isBusy;
-                this.OnPropertyChanged();
-            }
+            if (isBusy == value)
+                return;
+            isBusy = value;
+            this.IsNotBusy = !isBusy;
+            this.OnPropertyChanged();
         }
-        public bool isNotBusy;
-        public bool IsNotBusy
+    }
+    public bool isNotBusy;
+    public bool IsNotBusy
+    {
+        get => isNotBusy;
+        set
         {
-            get => isNotBusy;
-            set
-            {
-                if (isNotBusy == value)
-                    return;
-                isNotBusy = value;
-                this.OnPropertyChanged();
-            }
+            if (isNotBusy == value)
+                return;
+            isNotBusy = value;
+            this.OnPropertyChanged();
         }
+    }
 
-        public bool isLoggedIn;
-        public bool IsLoggedIn
+    public bool isLoggedIn;
+    public bool IsLoggedIn
+    {
+        get => isLoggedIn;
+        set
         {
-            get => isLoggedIn;
-            set
-            {
-                if (isLoggedIn == value)
-                    return;
-                isLoggedIn = value;
-                this.IsNotLoggedIn = !isLoggedIn;
-                this.OnPropertyChanged();
-            }
+            if (isLoggedIn == value)
+                return;
+            isLoggedIn = value;
+            this.IsNotLoggedIn = !isLoggedIn;
+            this.OnPropertyChanged();
         }
-        public bool isNotLoggedIn = true;
-        public bool IsNotLoggedIn
+    }
+    public bool isNotLoggedIn = true;
+    public bool IsNotLoggedIn
+    {
+        get => isNotLoggedIn;
+        set
         {
-            get => isNotLoggedIn;
-            set
-            {
-                if (isNotLoggedIn == value)
-                    return;
-                isNotLoggedIn = value;
-                this.OnPropertyChanged();
-            }
+            if (isNotLoggedIn == value)
+                return;
+            isNotLoggedIn = value;
+            this.OnPropertyChanged();
         }
+    }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+    public event PropertyChangedEventHandler PropertyChanged;
 
-        public void OnPropertyChanged([CallerMemberName] string name = null)
+    public void OnPropertyChanged([CallerMemberName] string name = null)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+    }
+
+    public async Task GoPageBack()
+    {
+
+        try
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
+            await Shell.Current.Navigation.PopAsync();
 
-        public async Task GoPageBack()
+        }
+        catch (Exception ex)
         {
-
-            try
-            {
-                await Shell.Current.Navigation.PopAsync();
-
-            }
-            catch (Exception ex)
-            {
-                await Shell.Current.DisplayAlert("Error!", ex.Message, "OK");
-            }
+            await Shell.Current.DisplayAlert("Error!", ex.Message, "OK");
         }
+    }
 
-        public Task CheckIsLoggedIn()
-        {
-            if (string.IsNullOrEmpty(Settings.Token))
-                IsLoggedIn = false;
-            else
-                IsLoggedIn = true;
+    public Task CheckIsLoggedIn()
+    {
+        if (string.IsNullOrEmpty(Settings.Token))
+            IsLoggedIn = false;
+        else
+            IsLoggedIn = true;
 
-            return Task.CompletedTask;
-        }
+        return Task.CompletedTask;
     }
 }

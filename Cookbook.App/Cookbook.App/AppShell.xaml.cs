@@ -1,16 +1,16 @@
 ﻿using Cookbook.App.Views;
 
-namespace Cookbook.App
-{
-    public partial class AppShell : Shell
-    {
-        public AppShell()
-        {
-            InitializeComponent();
+namespace Cookbook.App;
 
-            Routing.RegisterRoute(nameof(AddOrCreateItemPage), typeof(AddOrCreateItemPage));
-            Routing.RegisterRoute(nameof(RecipeShowPage), typeof(RecipeShowPage));
-            Routing.RegisterRoute(nameof(RecipeManagePage), typeof(RecipeManagePage));
-        }
+public partial class AppShell : Shell
+{
+    public AppShell()
+    {
+        InitializeComponent();
+
+        Routing.RegisterRoute(nameof(AddOrCreateItemPage), typeof(AddOrCreateItemPage));
+        Routing.RegisterRoute(nameof(RecipeShowPage), typeof(RecipeShowPage));
+        Routing.RegisterRoute(nameof(RecipeManagePage), typeof(RecipeManagePage));
+
     }
 }

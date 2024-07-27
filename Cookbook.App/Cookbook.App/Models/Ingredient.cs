@@ -1,63 +1,58 @@
 ﻿using SQLite;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Cookbook.App.Models
+
+namespace Cookbook.App.Models;
+
+public class Ingredient : BaseModel
 {
-    public class Ingredient : BaseModel
+    private int id;
+    [PrimaryKey]
+    public int Id
     {
-        private int id;
-        [PrimaryKey]
-        public int Id
+        get => id;
+        set
         {
-            get => id;
-            set
-            {
-                if (id == value)
-                    return;
-                id = value;
-                this.OnPropertyChanged();
-            }
+            if (id == value)
+                return;
+            id = value;
+            this.OnPropertyChanged();
         }
+    }
 
-        private string name;
-        public string Name
+    private string name;
+    public string Name
+    {
+        get => name;
+        set
         {
-            get => name;
-            set
-            {
-                if (name == value)
-                    return;
-                name = value;
-                this.OnPropertyChanged();
-            }
+            if (name == value)
+                return;
+            name = value;
+            this.OnPropertyChanged();
         }
-        private string quantity;
-        public string Quantity
+    }
+    private string quantity;
+    public string Quantity
+    {
+        get => quantity;
+        set
         {
-            get => quantity;
-            set
-            {
-                if (quantity == value)
-                    return;
-                quantity = value;
-                this.OnPropertyChanged();
-            }
+            if (quantity == value)
+                return;
+            quantity = value;
+            this.OnPropertyChanged();
         }
-        private int recipeId;
-        public int RecipeId
+    }
+    private int recipeId;
+    public int RecipeId
+    {
+        get => recipeId;
+        set
         {
-            get => recipeId;
-            set
-            {
-                if (recipeId == value)
-                    return;
-                recipeId = value;
-                this.OnPropertyChanged();
-            }
+            if (recipeId == value)
+                return;
+            recipeId = value;
+            this.OnPropertyChanged();
         }
     }
 }

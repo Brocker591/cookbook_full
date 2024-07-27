@@ -1,72 +1,71 @@
 ﻿using SQLite;
 
-namespace Cookbook.App.Models
+namespace Cookbook.App.Models;
+
+public class User : BaseModel
 {
-    public class User : BaseModel
+    private Guid id;
+    
+    [PrimaryKey]
+    public Guid Id
     {
-        private Guid id;
-        
-        [PrimaryKey]
-        public Guid Id
+        get => id;
+        set
         {
-            get => id;
-            set
-            {
-                if (id == value)
-                    return;
-                id = value;
-                this.OnPropertyChanged();
-            }
+            if (id == value)
+                return;
+            id = value;
+            this.OnPropertyChanged();
         }
-        private string userName;
-        public string UserName
+    }
+    private string userName;
+    public string UserName
+    {
+        get => userName;
+        set
         {
-            get => userName;
-            set
-            {
-                if (userName == value)
-                    return;
-                userName = value;
-                this.OnPropertyChanged();
-            }
+            if (userName == value)
+                return;
+            userName = value;
+            this.OnPropertyChanged();
         }
-        private string password;
-        public string Password
+    }
+    private string password;
+    public string Password
+    {
+        get => password;
+        set
         {
-            get => password;
-            set
-            {
-                if (password == value)
-                    return;
-                password = value;
-                this.OnPropertyChanged();
-            }
+            if (password == value)
+                return;
+            password = value;
+            this.OnPropertyChanged();
         }
+    }
 
-        private string token;
-        public string Token
+    private string token;
+    public string Token
+    {
+        get => token;
+        set
         {
-            get => token;
-            set
-            {
-                if (token == value)
-                    return;
-                token = value;
-                this.OnPropertyChanged();
-            }
+            if (token == value)
+                return;
+            token = value;
+            this.OnPropertyChanged();
         }
+    }
 
-        private DateTime expireDate;
-        public DateTime ExpireDate
+    private DateTime expireDate;
+    public DateTime ExpireDate
+    {
+        get => expireDate;
+        set
         {
-            get => expireDate;
-            set
-            {
-                if (expireDate == value)
-                    return;
-                expireDate = value;
-                this.OnPropertyChanged();
-            }
+            if (expireDate == value)
+                return;
+            expireDate = value;
+            this.OnPropertyChanged();
         }
     }
 }
