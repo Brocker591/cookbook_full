@@ -50,3 +50,14 @@ class ItemDto(ItemBaseDto):
 
 class InventoryBaseDto(BaseModel):
     items: List[ItemDto]
+
+
+class MealPlanBaseDto(BaseModel):
+    id = str
+    monday = str
+    tuesday = str
+    wednesday = str
+    thursday = str
+    friday = str
+    saturday = str
+    sunday = str

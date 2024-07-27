@@ -145,6 +145,10 @@ public class MainPageViewModel : BaseViewModel
         User.UserName = "";
         User.Password = "";
 
+        await _userRepository.RemoveAsync(User.Id);
+        Settings.Token = string.Empty;
+        User = new User();
+
     }
 
 

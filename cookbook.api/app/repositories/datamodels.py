@@ -46,6 +46,18 @@ class Item(session.Base):
     inventory = Column(Boolean, nullable=False, default=False)
 
 
+class MealPlan(session.Base):
+    __tablename__ = "mealplans"
+    id = Column(String, primary_key=True, nullable=False, unique=True)
+    monday = Column(String, nullable=True)
+    tuesday = Column(String, nullable=True)
+    wednesday = Column(String, nullable=True)
+    thursday = Column(String, nullable=True)
+    friday = Column(String, nullable=True)
+    saturday = Column(String, nullable=True)
+    sunday = Column(String, nullable=True)
+
+
 @event.listens_for(User.__table__, 'after_create')
 def insert_initial_user(*args, **kwargs):
 
