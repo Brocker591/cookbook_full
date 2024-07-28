@@ -48,7 +48,7 @@ class Item(session.Base):
 
 class MealPlan(session.Base):
     __tablename__ = "mealplans"
-    id = Column(String, primary_key=True, nullable=False, unique=True)
+    id = Column(Integer, primary_key=True, nullable=False, unique=True)
     monday = Column(String, nullable=True)
     tuesday = Column(String, nullable=True)
     wednesday = Column(String, nullable=True)

@@ -7,32 +7,48 @@
       "RelativeMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|solutionrelative:cookbook.app\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|c:\\projects\\cookbook_full\\cookbook.app\\cookbook.app\\services\\cookbookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|solutionrelative:cookbook.app\\services\\cookbookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|c:\\projects\\cookbook_full\\cookbook.app\\cookbook.app\\viewmodels\\shoppinglistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|solutionrelative:cookbook.app\\viewmodels\\shoppinglistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|c:\\projects\\cookbook_full\\cookbook.app\\cookbook.app\\viewmodels\\mainpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|solutionrelative:cookbook.app\\viewmodels\\mainpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|c:\\projects\\cookbook_full\\cookbook.app\\cookbook.app\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|solutionrelative:cookbook.app\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|c:\\projects\\cookbook_full\\cookbook.app\\cookbook.app\\viewmodels\\addorcreateitemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|solutionrelative:cookbook.app\\viewmodels\\addorcreateitemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|c:\\projects\\cookbook_full\\cookbook.app\\cookbook.app\\viewmodels\\shoppinglistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|solutionrelative:cookbook.app\\viewmodels\\shoppinglistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|c:\\projects\\cookbook_full\\cookbook.app\\cookbook.app\\services\\cookbookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|solutionrelative:cookbook.app\\services\\cookbookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|c:\\projects\\cookbook_full\\cookbook.app\\cookbook.app\\views\\shoppinglistpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|solutionrelative:cookbook.app\\views\\shoppinglistpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Cookbook.App\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|c:\\projects\\cookbook_full\\cookbook.app\\cookbook.app\\views\\shoppinglistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|solutionrelative:cookbook.app\\views\\shoppinglistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|c:\\projects\\cookbook_full\\cookbook.app\\cookbook.app\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|solutionrelative:cookbook.app\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|c:\\projects\\cookbook_full\\cookbook.app\\cookbook.app\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|solutionrelative:cookbook.app\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|c:\\projects\\cookbook_full\\cookbook.app\\cookbook.app\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|solutionrelative:cookbook.app\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|c:\\projects\\cookbook_full\\cookbook.app\\cookbook.app\\viewmodels\\mainpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|solutionrelative:cookbook.app\\viewmodels\\mainpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|c:\\projects\\cookbook_full\\cookbook.app\\cookbook.app\\views\\shoppinglistpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|solutionrelative:cookbook.app\\views\\shoppinglistpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|c:\\projects\\cookbook_full\\cookbook.app\\cookbook.app\\repositories\\itemtosendrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -151,10 +167,6 @@
       "RelativeMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|solutionrelative:cookbook.app\\viewmodels\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Cookbook.App\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|c:\\projects\\cookbook_full\\cookbook.app\\cookbook.app\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|solutionrelative:cookbook.app\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -165,10 +177,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|c:\\projects\\cookbook_full\\cookbook.app\\cookbook.app\\views\\recipeshowpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|solutionrelative:cookbook.app\\views\\recipeshowpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|c:\\projects\\cookbook_full\\cookbook.app\\cookbook.app\\views\\shoppinglistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|solutionrelative:cookbook.app\\views\\shoppinglistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|c:\\projects\\cookbook_full\\cookbook.app\\cookbook.app\\views\\recipemanagepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -191,14 +199,6 @@
       "RelativeMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|solutionrelative:cookbook.app\\views\\recipemanagepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|c:\\projects\\cookbook_full\\cookbook.app\\cookbook.app\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|solutionrelative:cookbook.app\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|c:\\projects\\cookbook_full\\cookbook.app\\cookbook.app\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|solutionrelative:cookbook.app\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|c:\\projects\\cookbook_full\\cookbook.app\\cookbook.app\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{867199B8-2A1F-44D6-8BA5-0E827050EC41}|Cookbook.App\\Cookbook.App.csproj|solutionrelative:cookbook.app\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -210,11 +210,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ShoppingListPage.xaml",
+              "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Views\\ShoppingListPage.xaml",
+              "RelativeDocumentMoniker": "Cookbook.App\\Views\\ShoppingListPage.xaml",
+              "ToolTip": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Views\\ShoppingListPage.xaml",
+              "RelativeToolTip": "Cookbook.App\\Views\\ShoppingListPage.xaml",
+              "ViewState": "AQIAADwAAAAAAAAAAAAAAFAAAABiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-03T13:48:35.09Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -224,92 +237,53 @@
               "RelativeDocumentMoniker": "Cookbook.App\\ViewModels\\AddOrCreateItemViewModel.cs",
               "ToolTip": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\ViewModels\\AddOrCreateItemViewModel.cs",
               "RelativeToolTip": "Cookbook.App\\ViewModels\\AddOrCreateItemViewModel.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAjwC0AAAAIAAAA",
+              "ViewState": "AQIAAB0AAAAAAAAAAIA3wC0AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-03T08:33:16.431Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "CookBookService.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Services\\CookBookService.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\Services\\CookBookService.cs",
               "ToolTip": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Services\\CookBookService.cs",
               "RelativeToolTip": "Cookbook.App\\Services\\CookBookService.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAWwBEAAAAIAAAA",
+              "ViewState": "AQIAAFEAAAAAAAAAAAAlwGYAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-03T14:43:14.941Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "ShoppingListViewModel.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\ViewModels\\ShoppingListViewModel.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\ViewModels\\ShoppingListViewModel.cs",
               "ToolTip": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\ViewModels\\ShoppingListViewModel.cs",
               "RelativeToolTip": "Cookbook.App\\ViewModels\\ShoppingListViewModel.cs",
-              "ViewState": "AQIAALUAAAAAAAAAAAAjwL0AAAAMAAAA",
+              "ViewState": "AQIAAK4AAAAAAAAAAAAawL0AAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-23T21:14:36.606Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainPageViewModel.cs",
-              "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\ViewModels\\MainPageViewModel.cs",
-              "RelativeDocumentMoniker": "Cookbook.App\\ViewModels\\MainPageViewModel.cs",
-              "ToolTip": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\ViewModels\\MainPageViewModel.cs",
-              "RelativeToolTip": "Cookbook.App\\ViewModels\\MainPageViewModel.cs",
-              "ViewState": "AQIAAH8AAAAAAAAAAADgv1IAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-27T20:43:53.22Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "ShoppingListPage.xaml.cs",
-              "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Views\\ShoppingListPage.xaml.cs",
-              "RelativeDocumentMoniker": "Cookbook.App\\Views\\ShoppingListPage.xaml.cs",
-              "ToolTip": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Views\\ShoppingListPage.xaml.cs",
-              "RelativeToolTip": "Cookbook.App\\Views\\ShoppingListPage.xaml.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAQwA8AAAAEAAAA",
+              "Title": "App.g.i.cs",
+              "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs",
+              "RelativeDocumentMoniker": "Cookbook.App\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs",
+              "ToolTip": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs",
+              "RelativeToolTip": "Cookbook.App\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs",
+              "ViewState": "AQIAADoAAAAAAAAAAAAlwEoAAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T21:14:36.617Z",
+              "WhenOpened": "2024-07-27T20:26:05.555Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Settings.cs",
-              "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Settings.cs",
-              "RelativeDocumentMoniker": "Cookbook.App\\Settings.cs",
-              "ToolTip": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Settings.cs",
-              "RelativeToolTip": "Cookbook.App\\Settings.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-03T14:23:11.624Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MainPage.xaml",
-              "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\MainPage.xaml",
-              "RelativeDocumentMoniker": "Cookbook.App\\MainPage.xaml",
-              "ToolTip": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\MainPage.xaml",
-              "RelativeToolTip": "Cookbook.App\\MainPage.xaml",
-              "ViewState": "AQIAACoAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-27T21:53:19.31Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "MauiProgram.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\MauiProgram.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\MauiProgram.cs",
@@ -322,7 +296,72 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Settings.cs",
+              "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Settings.cs",
+              "RelativeDocumentMoniker": "Cookbook.App\\Settings.cs",
+              "ToolTip": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Settings.cs",
+              "RelativeToolTip": "Cookbook.App\\Settings.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T14:23:11.624Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AppShell.xaml",
+              "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\AppShell.xaml",
+              "RelativeDocumentMoniker": "Cookbook.App\\AppShell.xaml",
+              "ToolTip": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\AppShell.xaml",
+              "RelativeToolTip": "Cookbook.App\\AppShell.xaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-03T14:21:53.502Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\MainPage.xaml",
+              "RelativeDocumentMoniker": "Cookbook.App\\MainPage.xaml",
+              "ToolTip": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\MainPage.xaml",
+              "RelativeToolTip": "Cookbook.App\\MainPage.xaml",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-27T21:53:19.31Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 11,
+              "Title": "ShoppingListPage.xaml.cs",
+              "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Views\\ShoppingListPage.xaml.cs",
+              "RelativeDocumentMoniker": "Cookbook.App\\Views\\ShoppingListPage.xaml.cs",
+              "ToolTip": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Views\\ShoppingListPage.xaml.cs",
+              "RelativeToolTip": "Cookbook.App\\Views\\ShoppingListPage.xaml.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAQwA8AAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T21:14:36.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MainPageViewModel.cs",
+              "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\ViewModels\\MainPageViewModel.cs",
+              "RelativeDocumentMoniker": "Cookbook.App\\ViewModels\\MainPageViewModel.cs",
+              "ToolTip": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\ViewModels\\MainPageViewModel.cs",
+              "RelativeToolTip": "Cookbook.App\\ViewModels\\MainPageViewModel.cs",
+              "ViewState": "AQIAAH8AAAAAAAAAAADgv1IAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T20:43:53.22Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\Repositories\\UserRepository.cs",
@@ -335,20 +374,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "ItemToSendRepository.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Repositories\\ItemToSendRepository.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\Repositories\\ItemToSendRepository.cs",
               "ToolTip": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Repositories\\ItemToSendRepository.cs",
               "RelativeToolTip": "Cookbook.App\\Repositories\\ItemToSendRepository.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAIAywCMAAAAEAAAA",
+              "ViewState": "AQIAAAoAAAAAAAAAAAD4vyMAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-27T20:07:21.316Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Repositories\\IUserRepository.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\Repositories\\IUserRepository.cs",
@@ -361,7 +400,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "IItemToSendRepository.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Repositories\\IItemToSendRepository.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\Repositories\\IItemToSendRepository.cs",
@@ -374,7 +413,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "IngredientCreateDto.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Dtos\\IngredientCreateDto.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\Dtos\\IngredientCreateDto.cs",
@@ -387,20 +426,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "RecipeListViewModel.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\ViewModels\\RecipeListViewModel.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\ViewModels\\RecipeListViewModel.cs",
               "ToolTip": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\ViewModels\\RecipeListViewModel.cs",
               "RelativeToolTip": "Cookbook.App\\ViewModels\\RecipeListViewModel.cs",
-              "ViewState": "AQIAADoAAAAAAAAAAAAmwDwAAAAyAAAA",
+              "ViewState": "AQIAADoAAAAAAAAAAAA4wDwAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-03T08:33:24.495Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "IngredientDto.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Dtos\\IngredientDto.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\Dtos\\IngredientDto.cs",
@@ -413,7 +452,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "IngredientUpdateDto.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Dtos\\IngredientUpdateDto.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\Dtos\\IngredientUpdateDto.cs",
@@ -426,7 +465,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 20,
               "Title": "ItemCreateDto.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Dtos\\ItemCreateDto.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\Dtos\\ItemCreateDto.cs",
@@ -439,7 +478,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 21,
               "Title": "ItemDto.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Dtos\\ItemDto.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\Dtos\\ItemDto.cs",
@@ -452,7 +491,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "ItemListDto.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Dtos\\ItemListDto.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\Dtos\\ItemListDto.cs",
@@ -465,7 +504,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 23,
               "Title": "ItemUpdateDto.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Dtos\\ItemUpdateDto.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\Dtos\\ItemUpdateDto.cs",
@@ -478,7 +517,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 24,
               "Title": "RecipeCreateDto.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Dtos\\RecipeCreateDto.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\Dtos\\RecipeCreateDto.cs",
@@ -491,7 +530,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 25,
               "Title": "RecipeDto.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Dtos\\RecipeDto.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\Dtos\\RecipeDto.cs",
@@ -504,7 +543,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 26,
               "Title": "RecipeUpdateDto.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Dtos\\RecipeUpdateDto.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\Dtos\\RecipeUpdateDto.cs",
@@ -517,7 +556,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 27,
               "Title": "UserDto.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Dtos\\UserDto.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\Dtos\\UserDto.cs",
@@ -530,7 +569,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 28,
               "Title": "BaseModel.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Models\\BaseModel.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\Models\\BaseModel.cs",
@@ -543,7 +582,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 29,
               "Title": "Ingredient.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Models\\Ingredient.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\Models\\Ingredient.cs",
@@ -556,7 +595,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 33,
               "Title": "Recipe.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Models\\Recipe.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\Models\\Recipe.cs",
@@ -569,7 +608,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 34,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Models\\User.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\Models\\User.cs",
@@ -582,7 +621,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 36,
               "Title": "IItemRepository.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Repositories\\IItemRepository.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\Repositories\\IItemRepository.cs",
@@ -595,7 +634,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 37,
               "Title": "ItemRepository.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Repositories\\ItemRepository.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\Repositories\\ItemRepository.cs",
@@ -608,7 +647,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 32,
               "Title": "ModelExtensions.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Models\\ModelExtensions.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\Models\\ModelExtensions.cs",
@@ -621,7 +660,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 31,
               "Title": "ItemToSend.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Models\\ItemToSend.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\Models\\ItemToSend.cs",
@@ -634,7 +673,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 30,
               "Title": "Item.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Models\\Item.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\Models\\Item.cs",
@@ -647,7 +686,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 35,
               "Title": "DatabaseSetting.cs.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Repositories\\DatabaseSetting.cs.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\Repositories\\DatabaseSetting.cs.cs",
@@ -660,7 +699,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 38,
               "Title": "RecipeShowViewModel.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\ViewModels\\RecipeShowViewModel.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\ViewModels\\RecipeShowViewModel.cs",
@@ -673,7 +712,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 39,
               "Title": "RecipeManageViewModel.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\ViewModels\\RecipeManageViewModel.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\ViewModels\\RecipeManageViewModel.cs",
@@ -686,7 +725,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 40,
               "Title": "BaseViewModel.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\ViewModels\\BaseViewModel.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\ViewModels\\BaseViewModel.cs",
@@ -699,7 +738,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 41,
               "Title": "AppShell.xaml.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\AppShell.xaml.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\AppShell.xaml.cs",
@@ -712,20 +751,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "App.g.i.cs",
-              "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs",
-              "RelativeDocumentMoniker": "Cookbook.App\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs",
-              "ToolTip": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs",
-              "RelativeToolTip": "Cookbook.App\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs",
-              "ViewState": "AQIAADwAAAAAAAAAAAAMwEoAAABEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-27T20:26:05.555Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 42,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\App.xaml.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\App.xaml.cs",
@@ -738,7 +764,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 44,
               "Title": "RecipeManagePage.xaml",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Views\\RecipeManagePage.xaml",
               "RelativeDocumentMoniker": "Cookbook.App\\Views\\RecipeManagePage.xaml",
@@ -751,20 +777,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "ShoppingListPage.xaml",
-              "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Views\\ShoppingListPage.xaml",
-              "RelativeDocumentMoniker": "Cookbook.App\\Views\\ShoppingListPage.xaml",
-              "ToolTip": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Views\\ShoppingListPage.xaml",
-              "RelativeToolTip": "Cookbook.App\\Views\\ShoppingListPage.xaml",
-              "ViewState": "AQIAAAYAAAAAAAAAACBjwCIAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-04-03T13:48:35.09Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 46,
               "Title": "RecipeListPage.xaml",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Views\\RecipeListPage.xaml",
               "RelativeDocumentMoniker": "Cookbook.App\\Views\\RecipeListPage.xaml",
@@ -777,7 +790,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 43,
               "Title": "RecipeShowPage.xaml",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Views\\RecipeShowPage.xaml",
               "RelativeDocumentMoniker": "Cookbook.App\\Views\\RecipeShowPage.xaml",
@@ -803,7 +816,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 45,
               "Title": "RecipeListPage.xaml.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Views\\RecipeListPage.xaml.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\Views\\RecipeListPage.xaml.cs",
@@ -816,7 +829,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 47,
               "Title": "RecipeShowPage.xaml.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Views\\RecipeShowPage.xaml.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\Views\\RecipeShowPage.xaml.cs",
@@ -829,7 +842,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 48,
               "Title": "RecipeManagePage.xaml.cs",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\Views\\RecipeManagePage.xaml.cs",
               "RelativeDocumentMoniker": "Cookbook.App\\Views\\RecipeManagePage.xaml.cs",
@@ -839,31 +852,39 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-03T14:33:53.853Z",
               "EditorCaption": ""
-            },
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "7773df50-855f-412c-af28-e22f664a4629",
+        "Display": 1,
+        "X": 726,
+        "Y": 288,
+        "Width": 1165,
+        "Height": 674,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 2,
               "Title": "App.xaml",
               "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\App.xaml",
               "RelativeDocumentMoniker": "Cookbook.App\\App.xaml",
               "ToolTip": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\App.xaml",
               "RelativeToolTip": "Cookbook.App\\App.xaml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAAC0AAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-04-03T14:21:49.012Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "AppShell.xaml",
-              "DocumentMoniker": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\AppShell.xaml",
-              "RelativeDocumentMoniker": "Cookbook.App\\AppShell.xaml",
-              "ToolTip": "C:\\Projects\\cookbook_full\\Cookbook.App\\Cookbook.App\\AppShell.xaml",
-              "RelativeToolTip": "Cookbook.App\\AppShell.xaml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-04-03T14:21:53.502Z",
               "EditorCaption": ""
             }
           ]

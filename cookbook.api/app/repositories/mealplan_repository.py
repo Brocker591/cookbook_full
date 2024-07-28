@@ -20,7 +20,7 @@ async def get_all_meal_plans(db: Session) -> List[MealPlanBaseDto]:
     return all_meal_plans_dto
 
 
-async def get_meal_plan_by_id(meal_plan_id: str, db: Session) -> MealPlanBaseDto:
+async def get_meal_plan_by_id(meal_plan_id: int, db: Session) -> MealPlanBaseDto:
     db_meal_plan = await get_datamodel_meal_plan_by_id(meal_plan_id=meal_plan_id, db=db)
     meal_plan_dto = MealPlanBaseDto(id=db_meal_plan.id, monday=db_meal_plan.monday,
                                     tuesday=db_meal_plan.tuesday, wednesday=db_meal_plan.wednesday,
@@ -70,7 +70,7 @@ async def update_meal_plan(meal_plan: MealPlanBaseDto, db: Session) -> None:
     db.commit()
 
 
-async def delete_meal_plan(meal_plan_id: str, db: Session) -> None:
+async def delete_meal_plan(meal_plan_id: int, db: Session) -> None:
 
     meal_plan_item = await get_datamodel_meal_plan_by_id(meal_plan_id=meal_plan_id, db=db)
 
@@ -78,7 +78,7 @@ async def delete_meal_plan(meal_plan_id: str, db: Session) -> None:
     db.commit()
 
 
-async def get_datamodel_meal_plan_by_id(meal_plan_id: str, db: Session) -> MealPlan:
+async def get_datamodel_meal_plan_by_id(meal_plan_id: int, db: Session) -> MealPlan:
     db_meal_plan = db.query(MealPlan).filter(
         MealPlan.id == meal_plan_id).first()
 

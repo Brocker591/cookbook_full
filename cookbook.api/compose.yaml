@@ -2,6 +2,7 @@ version: "3.8"
 
 services:
   cockbook.api:
+    image: brocker591/cookbook.api:1.6
     build: .
     ports:
       - "8000:80"

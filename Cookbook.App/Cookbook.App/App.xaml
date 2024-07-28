@@ -44,6 +44,7 @@
             <Style x:Key="CardView" TargetType="Frame">
                 <Setter Property="BorderColor"  Value="{StaticResource Primary}" />
                 <Setter Property="HasShadow" Value="True" />
+                
                 <Setter Property="Padding" Value="2" />
                 <Setter Property="Background" Value="{AppThemeBinding Light={StaticResource CardBackground}, Dark={StaticResource CardBackgroundDark}}" />
                 <Setter Property="CornerRadius" Value="5" />

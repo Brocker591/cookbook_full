@@ -53,11 +53,11 @@ class InventoryBaseDto(BaseModel):
 
 
 class MealPlanBaseDto(BaseModel):
-    id = str
-    monday = str
-    tuesday = str
-    wednesday = str
-    thursday = str
-    friday = str
-    saturday = str
-    sunday = str
+    id: int
+    monday: str
+    tuesday: str
+    wednesday: str
+    thursday: str
+    friday: str
+    saturday: str
+    sunday: str
