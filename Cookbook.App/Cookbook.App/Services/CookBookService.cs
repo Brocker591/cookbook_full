@@ -15,7 +15,6 @@ public class CookBookService : ICookBookService
     public CookBookService()
     {
         Client = new HttpClient();
-        Client.BaseAddress = new Uri(Settings.ApiUrl);
         Client.Timeout = TimeSpan.FromSeconds(10);
     }
 
@@ -25,7 +24,7 @@ public class CookBookService : ICookBookService
         var dict = new Dictionary<string, string>();
         dict.Add("username", userModel.UserName);
         dict.Add("password", userModel.Password);;
-        using var request = new HttpRequestMessage(HttpMethod.Post, "/login") { Content = new FormUrlEncodedContent(dict) };
+        using var request = new HttpRequestMessage(HttpMethod.Post, Settings.ApiUrl + "/login") { Content = new FormUrlEncodedContent(dict) };
 
 
         using var response = await Client.SendAsync(request);
@@ -65,7 +64,7 @@ public class CookBookService : ICookBookService
         if (string.IsNullOrEmpty(Settings.Token))
             return new List<Item>();
 
-        using var request = new HttpRequestMessage(HttpMethod.Get, "/items");
+        using var request = new HttpRequestMessage(HttpMethod.Get, Settings.ApiUrl + "/items");
         request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", Settings.Token);
 
         using var response = await Client.SendAsync(request);
@@ -93,7 +92,7 @@ public class CookBookService : ICookBookService
             inventory = item.Inventory
         };
 
-        using var request = new HttpRequestMessage(HttpMethod.Put, "/items");
+        using var request = new HttpRequestMessage(HttpMethod.Put, Settings.ApiUrl + "/items");
         request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", Settings.Token);
 
         request.Content = new StringContent(JsonConvert.SerializeObject(itemUpdateDto), Encoding.UTF8, "application/json");
@@ -119,7 +118,7 @@ public class CookBookService : ICookBookService
         };
 
 
-        using var request = new HttpRequestMessage(HttpMethod.Post, "/items");
+        using var request = new HttpRequestMessage(HttpMethod.Post, Settings.ApiUrl + "/items");
         request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", Settings.Token);
 
         request.Content = new StringContent(JsonConvert.SerializeObject(itemCreateDto), Encoding.UTF8, "application/json");
@@ -142,7 +141,7 @@ public class CookBookService : ICookBookService
         if (string.IsNullOrEmpty(Settings.Token))
             throw new HttpRequestException("No Token");
 
-        using var request = new HttpRequestMessage(HttpMethod.Get, "/recipes");
+        using var request = new HttpRequestMessage(HttpMethod.Get, Settings.ApiUrl + "/recipes");
         request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", Settings.Token);
 
         using var response = await Client.SendAsync(request);
@@ -166,7 +165,7 @@ public class CookBookService : ICookBookService
 
         var recipeCreateDto = recipe.ToCreateDto();
 
-        using var request = new HttpRequestMessage(HttpMethod.Post, "/recipes");
+        using var request = new HttpRequestMessage(HttpMethod.Post, Settings.ApiUrl + "/recipes");
         request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", Settings.Token);
 
         request.Content = new StringContent(JsonConvert.SerializeObject(recipeCreateDto), Encoding.UTF8, "application/json");
@@ -189,7 +188,7 @@ public class CookBookService : ICookBookService
 
         var recipeUpdateDto = recipe.ToUpdateDto();
 
-        using var request = new HttpRequestMessage(HttpMethod.Put, "/recipes");
+        using var request = new HttpRequestMessage(HttpMethod.Put, Settings.ApiUrl + "/recipes");
         request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", Settings.Token);
 
         request.Content = new StringContent(JsonConvert.SerializeObject(recipeUpdateDto), Encoding.UTF8, "application/json");
@@ -206,7 +205,7 @@ public class CookBookService : ICookBookService
         if (string.IsNullOrEmpty(Settings.Token))
             throw new HttpRequestException("No Token");
 
-        using var request = new HttpRequestMessage(HttpMethod.Post, $"/recipes/shoplist/{recipeId}");
+        using var request = new HttpRequestMessage(HttpMethod.Post, Settings.ApiUrl + $"/recipes/shoplist/{recipeId}");
         request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", Settings.Token);
 
         using var response = await Client.SendAsync(request);

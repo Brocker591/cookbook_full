@@ -24,7 +24,7 @@
 		<ApplicationTitle>Cookbook.App</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.cookbook.app</ApplicationId>
+		<ApplicationId>tinysoftware.cookbook.app</ApplicationId>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
