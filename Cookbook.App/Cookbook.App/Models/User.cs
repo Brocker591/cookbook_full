@@ -18,6 +18,20 @@ public class User : BaseModel
             this.OnPropertyChanged();
         }
     }
+
+    private int userId;
+    public int UserId
+    {
+        get => userId;
+        set
+        {
+            if (userId == value)
+                return;
+            userId = value;
+            this.OnPropertyChanged();
+        }
+    }
+
     private string userName;
     public string UserName
     {

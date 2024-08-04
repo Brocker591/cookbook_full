@@ -14,7 +14,7 @@ public static class ModelExtensions
             Quantity = item.Quantity,
             Priority = item.Priority,
             Inventory = item.Inventory
-            
+
         };
     }
 
@@ -144,6 +144,36 @@ public static class ModelExtensions
             name = recipe.Name,
             preparation = recipe.Preparation,
             ingredients = recipe.Ingredients.Select(i => i.ToUpdateDto()).ToList()
+        };
+    }
+
+    public static MealPlanDto ToMealPlanDto(this MealPlan mealPlan)
+    {
+        return new MealPlanDto
+        {
+            id = mealPlan.Id,
+            monday = mealPlan.Monday,
+            tuesday = mealPlan.Tuesday,
+            wednesday = mealPlan.Wednesday,
+            thursday = mealPlan.Thursday,
+            friday = mealPlan.Friday,
+            saturday = mealPlan.Saturday,
+            sunday = mealPlan.Sunday,
+        };
+    }
+
+    public static MealPlan ToModel(this MealPlanDto dto)
+    {
+        return new MealPlan
+        {
+            Id = dto.id,
+            Monday = dto.monday,
+            Tuesday = dto.tuesday,
+            Wednesday = dto.wednesday,
+            Thursday = dto.thursday,
+            Friday = dto.friday,
+            Saturday = dto.saturday,
+            Sunday = dto.sunday,
         };
     }
 

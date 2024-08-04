@@ -33,31 +33,13 @@ public class CookBookService : ICookBookService
             var json = await response.Content.ReadAsStringAsync();
             var userResponse = JsonConvert.DeserializeObject<UserDto>(json);
 
+            userModel.UserId = userResponse.UserId;
             userModel.Token = userResponse.access_token;
             userModel.ExpireDate = DateTime.Now.AddMinutes(userResponse.expiresIn);
         }
         return userModel;
     }
 
-    //public async Task<List<Item>> GetInventroy()
-    //{
-    //    if(string.IsNullOrEmpty(Settings.Token))
-    //        return new List<Item>();
-
-    //    using var request = new HttpRequestMessage(HttpMethod.Get, "/inventory");
-    //    request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", Settings.Token);
-
-    //    using var response = await Client.SendAsync(request);
-    //    if (response.IsSuccessStatusCode)
-    //    {
-    //        var json = await response.Content.ReadAsStringAsync();
-    //        var itemsDto = JsonConvert.DeserializeObject<ItemListDto>(json);
-    //        List<Item> items = itemsDto.Items.Select(x => x.ToModel()).ToList();
-
-    //        return items;
-    //    }
-    //    return new List<Item>();
-    //}
 
     public async Task<List<Item>> GetAllItemsAsync()
     {
@@ -213,5 +195,68 @@ public class CookBookService : ICookBookService
             return;
         else
             throw new HttpRequestException("Error updating recipe");
+    }
+
+    public async Task<MealPlan?> GetMealPlanAsync(int userId)
+    {
+        if (string.IsNullOrEmpty(Settings.Token))
+            return null;
+
+        using var request = new HttpRequestMessage(HttpMethod.Get, Settings.ApiUrl + $"/mealplans/{userId}");
+        request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", Settings.Token);
+
+        using var response = await Client.SendAsync(request);
+        if (response.IsSuccessStatusCode)
+        {
+            var json = await response.Content.ReadAsStringAsync();
+            var dto = JsonConvert.DeserializeObject<MealPlanDto>(json);
+            return dto.ToModel();
+        }
+        return null;
+    }
+
+
+    public async Task<MealPlan> CreateMealPlanAsync(MealPlan mealplan)
+    {
+        if (string.IsNullOrEmpty(Settings.Token))
+            throw new HttpRequestException("No Token");
+
+
+        using var request = new HttpRequestMessage(HttpMethod.Post, Settings.ApiUrl + "/mealplans");
+        request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", Settings.Token);
+
+        request.Content = new StringContent(JsonConvert.SerializeObject(mealplan.ToMealPlanDto()), Encoding.UTF8, "application/json");
+
+
+        using var response = await Client.SendAsync(request);
+        if (response.IsSuccessStatusCode)
+        {
+            var json = await response.Content.ReadAsStringAsync();
+            var dto = JsonConvert.DeserializeObject<MealPlanDto>(json);
+            return dto.ToModel();
+        }
+        else
+            throw new HttpRequestException("Error creating MealPlan");
+
+    }
+
+
+    public async Task UpdateMealPlanAsync(MealPlan mealPlan)
+    {
+        if (string.IsNullOrEmpty(Settings.Token))
+            return;
+
+
+        using var request = new HttpRequestMessage(HttpMethod.Put, Settings.ApiUrl + "/mealplans");
+        request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", Settings.Token);
+
+        request.Content = new StringContent(JsonConvert.SerializeObject(mealPlan.ToMealPlanDto()), Encoding.UTF8, "application/json");
+
+
+        using var response = await Client.SendAsync(request);
+        if (response.IsSuccessStatusCode)
+            return;
+        else
+            throw new HttpRequestException("Error updating MealPlan");
     }
 }
