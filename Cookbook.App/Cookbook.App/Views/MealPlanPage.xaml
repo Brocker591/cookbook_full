@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cookbook.App.Views.MealPlanPage"
+             Title="Speiseplan">
+    <VerticalStackLayout Padding="20">
+        <Frame BackgroundColor="#3D5AFE" HasShadow="True" CornerRadius="15" Padding="2" Margin="2" IsClippedToBounds="True">
+            <Grid RowDefinitions="auto,*" ColumnDefinitions="*,auto">
+                <Label 
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Padding="5" 
+                    HorizontalTextAlignment="Center" 
+                    VerticalTextAlignment="Center"
+                    TextColor="White"
+                    Text="Montag"/>
+
+                <Label 
+                    Grid.Row="1" 
+                    Grid.Column="0"
+                    BackgroundColor="White" 
+                    TextColor="Black"
+                    Margin="7,0,7,3"
+                    HorizontalTextAlignment="Center" 
+                    VerticalTextAlignment="Center"
+                    FontSize="18"
+                    Text="Waffeln"/>
+                <Button
+                    x:Name="btnMonday"
+                    Grid.RowSpan="2"
+                    Grid.Column="1"
+                    CornerRadius="15"
+                    BorderColor="Black"
+                    BorderWidth="2"
+                    Background="#00f700"
+                    TextColor="Black"
+                    FontSize="10"
+                    Text="Bearbeiten"/>
+            </Grid>
+        </Frame>
+        <Frame BackgroundColor="#3D5AFE" HasShadow="True" CornerRadius="15" Padding="2" Margin="2" IsClippedToBounds="True">
+            <Grid RowDefinitions="auto,*" ColumnDefinitions="*,auto">
+                <Label 
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Padding="5" 
+                    HorizontalTextAlignment="Center" 
+                    VerticalTextAlignment="Center"
+                    TextColor="White"
+                    Text="Dienstag"/>
+
+                <Label 
+                    Grid.Row="1" 
+                    Grid.Column="0"
+                    BackgroundColor="White" 
+                    TextColor="Black"
+                    Margin="7,0,7,3"
+                    HorizontalTextAlignment="Center" 
+                    VerticalTextAlignment="Center"
+                    FontSize="18"
+                    Text="Waffeln"/>
+                <Button
+                    x:Name="btn2"
+                    Grid.RowSpan="2"
+                    Grid.Column="1"
+                    CornerRadius="15"
+                    BorderColor="Black"
+                    BorderWidth="2"
+                    Background="#00f700"
+                    TextColor="Black"
+                    FontSize="10"
+                    Text="Bearbeiten"/>
+            </Grid>
+        </Frame>
+        <Frame BackgroundColor="#3D5AFE" HasShadow="True" CornerRadius="15" Padding="2" Margin="2" IsClippedToBounds="True">
+            <Grid RowDefinitions="auto,*" ColumnDefinitions="*,auto">
+                <Label 
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Padding="5" 
+                    HorizontalTextAlignment="Center" 
+                    VerticalTextAlignment="Center"
+                    TextColor="White"
+                    Text="Mittwoch"/>
+
+                <Label 
+                    Grid.Row="1" 
+                    Grid.Column="0"
+                    BackgroundColor="White" 
+                    TextColor="Black"
+                    Margin="7,0,7,3"
+                    HorizontalTextAlignment="Center" 
+                    VerticalTextAlignment="Center"
+                    FontSize="18"
+                    Text="Waffeln"/>
+                <Button
+                    x:Name="btn3"
+                    Grid.RowSpan="2"
+                    Grid.Column="1"
+                    CornerRadius="15"
+                    BorderColor="Black"
+                    BorderWidth="2"
+                    Background="#00f700"
+                    TextColor="Black"
+                    FontSize="10"
+                    Text="Bearbeiten"/>
+            </Grid>
+        </Frame>
+        <Frame BackgroundColor="#3D5AFE" HasShadow="True" CornerRadius="15" Padding="2" Margin="2" IsClippedToBounds="True">
+            <Grid RowDefinitions="auto,*" ColumnDefinitions="*,auto">
+                <Label 
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Padding="5" 
+                    HorizontalTextAlignment="Center" 
+                    VerticalTextAlignment="Center"
+                    TextColor="White"
+                    Text="Donnerstag"/>
+
+                <Label 
+                    Grid.Row="1" 
+                    Grid.Column="0"
+                    BackgroundColor="White" 
+                    TextColor="Black"
+                    Margin="7,0,7,3"
+                    HorizontalTextAlignment="Center" 
+                    VerticalTextAlignment="Center"
+                    FontSize="18"
+                    Text="Waffeln"/>
+                <Button
+                    x:Name="btn4"
+                    Grid.RowSpan="2"
+                    Grid.Column="1"
+                    CornerRadius="15"
+                    BorderColor="Black"
+                    BorderWidth="2"
+                    Background="#00f700"
+                    TextColor="Black"
+                    FontSize="10"
+                    Text="Bearbeiten"/>
+            </Grid>
+        </Frame>
+        <Frame BackgroundColor="#3D5AFE" HasShadow="True" CornerRadius="15" Padding="2" Margin="2" IsClippedToBounds="True">
+            <Grid RowDefinitions="auto,*" ColumnDefinitions="*,auto">
+                <Label 
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Padding="5" 
+                    HorizontalTextAlignment="Center" 
+                    VerticalTextAlignment="Center"
+                    TextColor="White"
+                    Text="Freitag"/>
+
+                <Label 
+                    Grid.Row="1" 
+                    Grid.Column="0"
+                    BackgroundColor="White" 
+                    TextColor="Black"
+                    Margin="7,0,7,3"
+                    HorizontalTextAlignment="Center" 
+                    VerticalTextAlignment="Center"
+                    FontSize="18"
+                    Text="Waffeln"/>
+                <Button
+                    x:Name="btn5"
+                    Grid.RowSpan="2"
+                    Grid.Column="1"
+                    CornerRadius="15"
+                    BorderColor="Black"
+                    BorderWidth="2"
+                    Background="#00f700"
+                    FontSize="10"
+                    TextColor="Black"
+                    Text="Bearbeiten"/>
+            </Grid>
+        </Frame>
+        <Frame BackgroundColor="#3D5AFE" HasShadow="True" CornerRadius="15" Padding="2" Margin="2" IsClippedToBounds="True">
+            <Grid RowDefinitions="auto,*" ColumnDefinitions="*,auto">
+                <Label 
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Padding="5" 
+                    HorizontalTextAlignment="Center" 
+                    VerticalTextAlignment="Center"
+                    TextColor="White"
+                    Text="Samstag"/>
+
+                <Label 
+                    Grid.Row="1" 
+                    Grid.Column="0"
+                    BackgroundColor="White" 
+                    TextColor="Black"
+                    Margin="7,0,7,3"
+                    HorizontalTextAlignment="Center" 
+                    VerticalTextAlignment="Center"
+                    FontSize="18"
+                    Text="Waffeln"/>
+                <Button
+                    x:Name="btn6"
+                    Grid.RowSpan="2"
+                    Grid.Column="1"
+                    CornerRadius="15"
+                    BorderColor="Black"
+                    BorderWidth="2"
+                    Background="#00f700"
+                    TextColor="Black"
+                    FontSize="10"
+                    Text="Bearbeiten"/>
+            </Grid>
+        </Frame>
+        <Frame BackgroundColor="#3D5AFE" HasShadow="True" CornerRadius="15" Padding="2" Margin="2" IsClippedToBounds="True">
+            <Grid RowDefinitions="auto,*" ColumnDefinitions="*,auto">
+                <Label 
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Padding="5" 
+                    HorizontalTextAlignment="Center" 
+                    VerticalTextAlignment="Center"
+                    TextColor="White"
+                    Text="Sonntag"/>
+
+                <Label 
+                    Grid.Row="1" 
+                    Grid.Column="0"
+                    BackgroundColor="White" 
+                    TextColor="Black"
+                    Margin="7,0,7,3"
+                    HorizontalTextAlignment="Center" 
+                    VerticalTextAlignment="Center"
+                    FontSize="18"
+                    Text="Waffeln"/>
+                <Button
+                    x:Name="btn7"
+                    Grid.RowSpan="2"
+                    Grid.Column="1"
+                    CornerRadius="15"
+                    BorderColor="Black"
+                    BorderWidth="2"
+                    Background="#00f700"
+                    TextColor="Black"
+                    FontSize="10"
+                    Text="Bearbeiten"/>
+            </Grid>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>

@@ -23,5 +23,9 @@
             Title="Rezepte">
             <ShellContent ContentTemplate="{DataTemplate view:RecipeListPage}" Route="RecipeListPage"/>
         </Tab>
+        <Tab 
+            Title="Speiseplan">
+            <ShellContent ContentTemplate="{DataTemplate view:MealPlanPage}" Route="MealPlanPage"/>
+        </Tab>
     </TabBar>
 </Shell>

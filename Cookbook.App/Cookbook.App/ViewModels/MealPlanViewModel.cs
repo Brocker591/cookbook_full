@@ -94,6 +94,4 @@ public class MealPlanViewModel : BaseViewModel
             IsBusy = false;
         }
     }
-
-
 }
