@@ -46,7 +46,7 @@ pip install -e .
 
 ## Docker
 
-$version="1.6"
+$version="1.7"
 
 docker build -t "brocker591/cookbook.api:$version" .
 

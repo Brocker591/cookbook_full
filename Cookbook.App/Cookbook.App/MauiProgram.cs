@@ -39,6 +39,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<RecipeManageViewModel>();
         builder.Services.AddSingleton<RecipeShowViewModel>();
         builder.Services.AddSingleton<MealPlanViewModel>();
+        builder.Services.AddSingleton<EditMealPlanViewModel>();
 
         //Views
         builder.Services.AddSingleton<MainPage>();
@@ -48,6 +49,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<RecipeManagePage>();
         builder.Services.AddSingleton<RecipeShowPage>();
         builder.Services.AddSingleton<MealPlanPage>();
+        builder.Services.AddSingleton<EditMealPlanPage>();
 
 
 

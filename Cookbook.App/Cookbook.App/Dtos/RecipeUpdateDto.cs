@@ -3,7 +3,7 @@
 public class RecipeUpdateDto
 {
     public int id { get; set; }
-    public string name { get; set; }
-    public string preparation { get; set; }
-    public List<IngredientUpdateDto> ingredients { get; set; }
+    public string name { get; set; } = default!;
+    public string preparation { get; set; } = default!;
+    public List<IngredientUpdateDto> ingredients { get; set; } = default!;
 }

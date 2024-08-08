@@ -2,12 +2,11 @@ using Cookbook.App.ViewModels;
 
 namespace Cookbook.App.Views;
 
-public partial class MealPlanPage : ContentPage
+public partial class EditMealPlanPage : ContentPage
 {
-    public MealPlanViewModel ViewModel;
-    public MealPlanPage(MealPlanViewModel viewModel)
-	{
-
+    public EditMealPlanViewModel ViewModel;
+    public EditMealPlanPage(EditMealPlanViewModel viewModel)
+    {
         InitializeComponent();
         ViewModel = viewModel;
         BindingContext = ViewModel;
@@ -17,7 +16,7 @@ public partial class MealPlanPage : ContentPage
     {
         base.OnAppearing();
 
-        ViewModel.LoadDataCommand.Execute(this);
+        ViewModel.LoadDataFromServerCommand.Execute(this);
 
         ViewModel.CheckIsLoggedIn();
     }

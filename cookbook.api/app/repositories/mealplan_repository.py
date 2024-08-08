@@ -41,7 +41,7 @@ async def create_meal_plan(meal_plan: MealPlanBaseDto, db: Session) -> MealPlanB
     new_meal_plan = MealPlan(id=meal_plan.id, monday=meal_plan.monday,
                              tuesday=meal_plan.tuesday, wednesday=meal_plan.wednesday,
                              thursday=meal_plan.thursday, friday=meal_plan.friday,
-                             saturday=meal_plan.saturday, sunday=meal_plan.sunda)
+                             saturday=meal_plan.saturday, sunday=meal_plan.sunday)
 
     db.add(new_meal_plan)
     db.commit()
@@ -56,7 +56,7 @@ async def create_meal_plan(meal_plan: MealPlanBaseDto, db: Session) -> MealPlanB
 
 async def update_meal_plan(meal_plan: MealPlanBaseDto, db: Session) -> None:
 
-    exist_meal_plan = await get_datamodel_meal_plan_by_id(item_id=meal_plan.id, db=db)
+    exist_meal_plan = await get_datamodel_meal_plan_by_id(meal_plan_id=meal_plan.id, db=db)
 
     exist_meal_plan.monday = meal_plan.monday
     exist_meal_plan.tuesday = meal_plan.tuesday
